@@ -528,11 +528,6 @@ textarea{ resize:vertical; }
 .kf-step{ display:none; }
 .kf-step.is-active{
   display:block;
-  animation:kfStepIn .45s var(--ease-out);
-}
-@keyframes kfStepIn{
-  from{ opacity:0; transform:translateY(10px); }
-  to{ opacity:1; transform:none; }
 }
 
 .kf-step__head{
@@ -579,7 +574,7 @@ textarea{ resize:vertical; }
   background:var(--cream);
   cursor:pointer;
   transition:border-color .25s var(--ease),background-color .25s var(--ease),
-             box-shadow .25s var(--ease),transform .25s var(--ease);
+             box-shadow .25s var(--ease);
   overflow:hidden;
 }
 .kf-opt:hover{ border-color:var(--line); }
@@ -650,18 +645,6 @@ textarea{ resize:vertical; }
 }
 .kf-opt.is-selected .kf-opt__check svg{
   opacity:1; transform:scale(1);
-}
-.kf-opt.is-selected{ animation:kfPop .35s var(--ease-out); }
-@keyframes kfPop{
-  0%{ transform:scale(1); }
-  50%{ transform:scale(1.015); }
-  100%{ transform:scale(1); }
-}
-.kf-opt.is-selected .kf-opt__check{ animation:kfCheckPop .35s var(--ease-out); }
-@keyframes kfCheckPop{
-  0%{ transform:scale(.85); }
-  60%{ transform:scale(1.12); }
-  100%{ transform:scale(1); }
 }
 
 /* Field styles (step 4) */
@@ -740,7 +723,6 @@ textarea{ resize:vertical; }
   border:1px solid var(--line);
   border-radius:var(--radius);
   overflow:hidden;
-  box-shadow:0 20px 50px -40px rgba(41,16,8,.35);
 }
 @media (min-width:980px){
   .kf-summary{
@@ -843,33 +825,6 @@ textarea{ resize:vertical; }
   font-size:.82rem;
   color:var(--ink-40);
   font-style:italic;
-}
-
-.kf-sum__qty{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:12px;
-  padding-block:14px;
-  border-bottom:1px solid var(--line-soft);
-}
-.kf-sum__qty-label{
-  font-size:.66rem; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--ink-62);
-}
-.kf-qty{
-  display:inline-flex; align-items:center;
-  border:1px solid var(--line);
-  border-radius:var(--pill);
-  overflow:hidden;
-}
-.kf-qty button{
-  width:30px; height:30px;
-  display:inline-flex; align-items:center; justify-content:center;
-  font-size:1rem; color:var(--ink-62);
-  transition:background-color .25s var(--ease),color .25s var(--ease);
-}
-.kf-qty button:hover{ background:rgba(41,16,8,.06); color:var(--ink); }
-.kf-qty span{
-  min-width:26px; text-align:center; font-size:.82rem;
 }
 
 .kf-summary__foot{
@@ -1119,7 +1074,6 @@ textarea{ resize:vertical; }
     scroll-behavior:auto!important;
   }
   .wa{ opacity:1; transform:none; animation:none; }
-  .kf-step.is-active{ animation:none; }
 }
 @media print{
   .site-header,.announce,.wa,.cart,.drawer,.search,.kf-builder__chips,.kf-nav{ display:none!important; }
@@ -1442,8 +1396,8 @@ textarea{ resize:vertical; }
       </h1>
 
       <p class="kf-builder-hero__sub">
-        Choose the base, layer in the blooms, add a gift and write the card — we'll compose
-        the rest in the studio and confirm the details with you on WhatsApp.
+        Choose a starting point, add a little extra, and tell us the details. We'll compose
+        the rest in the studio and confirm everything with you on WhatsApp.
       </p>
 
       <div class="kf-builder-hero__meta">
@@ -1470,19 +1424,19 @@ textarea{ resize:vertical; }
       <nav class="kf-builder__chips" aria-label="Builder steps">
         <button type="button" class="kf-chip is-active" data-goto="1" aria-current="step">
           <span class="kf-chip__num">1</span>
-          The base
+          Start
         </button>
         <button type="button" class="kf-chip" data-goto="2">
           <span class="kf-chip__num">2</span>
-          The blooms
+          Blooms
         </button>
         <button type="button" class="kf-chip" data-goto="3">
           <span class="kf-chip__num">3</span>
-          The gifts
+          Extras
         </button>
         <button type="button" class="kf-chip" data-goto="4">
           <span class="kf-chip__num">4</span>
-          The details
+          Details
         </button>
       </nav>
 
@@ -1490,11 +1444,11 @@ textarea{ resize:vertical; }
 
         <div class="kf-builder__main">
 
-          <!-- Mobile running total -->
+          <!-- Mobile running summary -->
           <div class="kf-runtotal" aria-hidden="false">
             <div>
-              <div class="kf-runtotal__label">Current total</div>
-              <div class="kf-runtotal__value" id="MobileTotal">Dhs. 0.00</div>
+              <div class="kf-runtotal__label">Starting estimate</div>
+              <div class="kf-runtotal__value" id="MobileTotal">—</div>
             </div>
             <a href="#summary" class="kf-runtotal__link" data-goto="4">Review →</a>
           </div>
@@ -1502,18 +1456,17 @@ textarea{ resize:vertical; }
           <!-- STEP 1 — base -->
           <section class="kf-step is-active" data-step="1" aria-labelledby="Step1Title">
             <div class="kf-step__head">
-              <span class="kf-step__num">Step 01</span>
-              <h2 class="kf-step__title" id="Step1Title">Start with a base.</h2>
+              <span class="kf-step__num">01</span>
+              <h2 class="kf-step__title" id="Step1Title">Start with the vibe.</h2>
               <p class="kf-step__sub">
-                Choose the arrangement or gift box to build around. Every option is composed
-                by hand in our studio.
+                Choose the style of arrangement or box you're drawn to. Every option is composed by hand in our studio.
               </p>
             </div>
 
             <div class="kf-options kf-options--bases" id="BaseOptions"></div>
 
             <div class="kf-nav">
-              <span class="kf-nav__hint">Pick a base to continue.</span>
+              <span class="kf-nav__hint">Pick a starting point to continue.</span>
               <button type="button" class="btn btn--solid kf-nav__next" data-next="1" disabled>
                 Continue
               </button>
@@ -1523,11 +1476,10 @@ textarea{ resize:vertical; }
           <!-- STEP 2 — blooms -->
           <section class="kf-step" data-step="2" aria-labelledby="Step2Title" hidden>
             <div class="kf-step__head">
-              <span class="kf-step__num">Step 02</span>
-              <h2 class="kf-step__title" id="Step2Title">Layer in the blooms.</h2>
+              <span class="kf-step__num">02</span>
+              <h2 class="kf-step__title" id="Step2Title">A little extra.</h2>
               <p class="kf-step__sub">
-                Add whatever your gift needs — extra fullness, a softer accent, sculptural
-                foliage, or a mix of what's best that week. Optional.
+                Want it fuller, softer, or more textured? Add whatever feels right. Or skip if you're happy with the base.
               </p>
             </div>
 
@@ -1548,11 +1500,10 @@ textarea{ resize:vertical; }
           <!-- STEP 3 — gifts -->
           <section class="kf-step" data-step="3" aria-labelledby="Step3Title" hidden>
             <div class="kf-step__head">
-              <span class="kf-step__num">Step 03</span>
-              <h2 class="kf-step__title" id="Step3Title">Add a gift or two.</h2>
+              <span class="kf-step__num">03</span>
+              <h2 class="kf-step__title" id="Step3Title">Finish it off.</h2>
               <p class="kf-step__sub">
-                Chocolates, a card, engraving, balloons, our signature ribbon. Add as many
-                as you like — or none at all.
+                The details that make it a complete gift. Chocolates, a card, engraving, balloons. Add as many as you like.
               </p>
             </div>
 
@@ -1563,7 +1514,7 @@ textarea{ resize:vertical; }
                 <svg viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M13 5H2M5.5 1.5L2 5l3.5 3.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 Back
               </button>
-              <span class="kf-nav__hint">Each add-on is per gift.</span>
+              <span class="kf-nav__hint">Each extra is per gift.</span>
               <button type="button" class="btn btn--solid kf-nav__next" data-next="3">
                 Continue
               </button>
@@ -1573,17 +1524,16 @@ textarea{ resize:vertical; }
           <!-- STEP 4 — details -->
           <section class="kf-step" data-step="4" aria-labelledby="Step4Title" hidden>
             <div class="kf-step__head">
-              <span class="kf-step__num">Step 04</span>
-              <h2 class="kf-step__title" id="Step4Title">The details.</h2>
+              <span class="kf-step__num">04</span>
+              <h2 class="kf-step__title" id="Step4Title">Tell us about the moment.</h2>
               <p class="kf-step__sub">
-                Tell us who it's for and when you need it. We'll come back on WhatsApp to
-                confirm everything — these fields are optional.
+                Who is it for, and when do you need it? We'll come back on WhatsApp to confirm everything.
               </p>
             </div>
 
             <div class="kf-fields">
               <div class="kf-field">
-                <label class="kf-field__label" for="bRecipient">Recipient</label>
+                <label class="kf-field__label" for="bRecipient">Recipient name</label>
                 <input id="bRecipient" type="text" placeholder="e.g. Sarah" autocomplete="off">
               </div>
               <div class="kf-field">
@@ -1595,8 +1545,8 @@ textarea{ resize:vertical; }
                 <textarea id="bMessage" placeholder="e.g. Happy birthday, love Mum x" rows="3"></textarea>
               </div>
               <div class="kf-field kf-field--full">
-                <label class="kf-field__label" for="bNotes">Anything else? <span>optional</span></label>
-                <textarea id="bNotes" placeholder="Colours to avoid, delivery instructions, a theme…" rows="3"></textarea>
+                <label class="kf-field__label" for="bNotes">Colours to avoid? Delivery notes? <span>optional</span></label>
+                <textarea id="bNotes" placeholder="e.g. She loves pinks, but hates lilies..." rows="3"></textarea>
               </div>
             </div>
 
@@ -1608,7 +1558,7 @@ textarea{ resize:vertical; }
               <span class="kf-nav__hint">Your selections save automatically.</span>
               <button type="button" class="btn btn--wa kf-nav__next" id="SendBottom">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3 0-.5l-.8-1.8c-.1-.3-.3-.3-.4-.3h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11 11 0 004.2 3.7 4.3 4.3 0 002 .4 2.7 2.7 0 001.9-.8 2.3 2.3 0 00.5-1.4c0-.1-.1-.2-.2-.3z"/></svg>
-                Send on WhatsApp
+                Send brief to studio
               </button>
             </div>
           </section>
@@ -1618,8 +1568,7 @@ textarea{ resize:vertical; }
         <!-- Summary -->
         <aside class="kf-summary" id="summary" aria-labelledby="SummaryTitle">
           <div class="kf-summary__head">
-            <h2 class="kf-summary__title" id="SummaryTitle">Your gift</h2>
-            <button type="button" class="kf-summary__reset" id="ResetBtn">Reset</button>
+            <h2 class="kf-summary__title" id="SummaryTitle">Your brief</h2>
           </div>
 
           <div class="kf-summary__body" id="SummaryBody">
@@ -1628,16 +1577,17 @@ textarea{ resize:vertical; }
 
           <div class="kf-summary__foot">
             <div class="kf-summary__total">
-              <span class="kf-summary__total-label">Estimated total</span>
-              <strong class="kf-summary__total-value" id="SummaryTotal" aria-live="polite">Dhs. 0.00</strong>
+              <span class="kf-summary__total-label">Starting estimate</span>
+              <strong class="kf-summary__total-value" id="SummaryTotal" aria-live="polite">—</strong>
             </div>
             <button type="button" class="btn btn--wa btn--full" id="SendSide" disabled>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.1-.3 0-.5l-.8-1.8c-.1-.3-.3-.3-.4-.3h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11 11 0 004.2 3.7 4.3 4.3 0 002 .4 2.7 2.7 0 001.9-.8 2.3 2.3 0 00.5-1.4c0-.1-.1-.2-.2-.3z"/></svg>
-              Send on WhatsApp
+              Send brief to studio
             </button>
             <p class="kf-summary__hint">
-              Selections save automatically. We'll confirm the brief and final price on WhatsApp.
+              A florist will review this and confirm the final price & stems on WhatsApp.
             </p>
+            <button type="button" class="kf-summary__reset" id="ResetBtn" style="margin-top: 12px; width: 100%; text-align: center;">Start over</button>
           </div>
         </aside>
 
@@ -1797,50 +1747,50 @@ textarea{ resize:vertical; }
   var BASES = [
     {
       id: 'butterly',
-      name: 'Butterly Arrangement',
+      name: 'Soft & Romantic',
       price: 25000,
-      note: 'Soft, romantic, gift-ready — a blush and ivory rose arrangement.',
+      note: 'Blush and ivory roses, garden style.',
       img: 'https://kyrahfleurs.com/cdn/shop/files/the-botanica-arrangement.png?v=1788441627'
     },
     {
       id: 'sienna',
-      name: 'The Sienna Arrangement',
+      name: 'Rich & Dramatic',
       price: 30000,
-      note: 'Rich burgundy, terracotta and peach tones.',
+      note: 'Burgundy, terracotta, and deep peach tones.',
       img: 'https://kyrahfleurs.com/cdn/shop/files/the-sienna-arrangement-hero.png?v=1788436653'
     },
     {
       id: 'pistachio',
-      name: 'Oval Pistachio Box',
+      name: 'Sculptural',
       price: 40000,
-      note: 'Sculptural, oval, made to stand out on a table.',
+      note: 'An oval box designed to stand out on a table.',
       img: 'https://kyrahfleurs.com/cdn/shop/files/oval-pistachio-box.png?v=1788440903'
     },
     {
       id: 'ivory-fairy',
-      name: 'The Ivory Fairy Box',
+      name: 'A Keepsake',
       price: 50000,
-      note: 'Ivory roses in a clear box with preserved moss.',
+      note: 'Arched display box with a lower drawer.',
       img: 'https://kyrahfleurs.com/cdn/shop/files/the-ivory-fairy-box.png?v=1788441876'
     },
     {
       id: 'noor',
-      name: 'The Noor Quran Drawer Box',
+      name: 'The Noor Box',
       price: 75000,
-      note: 'Arched display box with a lower drawer — gifting with a keepsake.',
+      note: 'A structured keepsake for a meaningful gift.',
       img: 'https://kyrahfleurs.com/cdn/shop/files/the-noor-quran-drawer-box.png?v=1788443117'
     }
   ];
 
   var BLOOMS = [
-    { id: 'ivory-roses',   name: 'Extra ivory roses',     price: 8000,  note: 'Adds fullness and a soft, romantic finish.' },
-    { id: 'blush-roses',   name: 'Blush spray roses',     price: 6000,  note: 'A gentle blush accent, a little softer.' },
-    { id: 'eucalyptus',    name: 'Eucalyptus & sage',     price: 4000,  note: 'Sculptural green foliage for a quieter look.' },
+    { id: 'ivory-roses',   name: 'Extra ivory roses',     price: 8000,  note: 'Adds fullness and a soft finish.' },
+    { id: 'blush-roses',   name: 'Blush spray roses',     price: 6000,  note: 'A gentle blush accent.' },
+    { id: 'eucalyptus',    name: 'Eucalyptus & sage',     price: 4000,  note: 'Sculptural green foliage.' },
     { id: 'seasonal',      name: 'Seasonal blooms mix',   price: 10000, note: 'Whatever is at its best in the studio that week.' }
   ];
 
   var GIFTS = [
-    { id: 'chocolates',    name: 'Belgian chocolates box',      price: 9000,  note: 'A small box of pralines, boxed in-studio.' },
+    { id: 'chocolates',    name: 'Belgian chocolates box',      price: 9000,  note: 'A small box of pralines.' },
     { id: 'card',          name: 'Handwritten card',            price: 2500,  note: 'Written by our studio team.' },
     { id: 'engraved',      name: 'Personalised engraved tag',   price: 6000,  note: 'Names or dates, engraved to order.' },
     { id: 'balloons',      name: 'Balloon bundle',              price: 7500,  note: 'A small bundle — tell us the colour in the notes.' },
@@ -1867,7 +1817,6 @@ textarea{ resize:vertical; }
     baseId: null,
     blooms: [],
     gifts: [],
-    qty: 1,
     details: { recipient: '', date: '', message: '', notes: '' }
   };
 
@@ -1884,7 +1833,6 @@ textarea{ resize:vertical; }
       if (Array.isArray(saved.gifts)) {
         state.gifts = saved.gifts.filter(function (id) { return !!byId(GIFTS, id); });
       }
-      if (typeof saved.qty === 'number' && saved.qty > 0) state.qty = Math.min(10, Math.max(1, saved.qty));
       if (saved.details && typeof saved.details === 'object') {
         ['recipient', 'date', 'message', 'notes'].forEach(function (k) {
           if (typeof saved.details[k] === 'string') state.details[k] = saved.details[k];
@@ -1912,7 +1860,6 @@ textarea{ resize:vertical; }
     return sum;
   }
   function unitTotal() { return basePrice() + extrasTotal(); }
-  function grandTotal() { return unitTotal() * state.qty; }
 
   /* ------------------------------------------------ Render options ---- */
   function makeOptionCard(type, item, isSelected, isRadio) {
@@ -1950,7 +1897,7 @@ textarea{ resize:vertical; }
 
     var price = doc.createElement('div');
     price.className = 'kf-opt__price';
-    price.textContent = (isRadio ? '' : '+') + money(item.price);
+    price.textContent = (isRadio ? 'From ' : '+') + money(item.price);
     body.appendChild(price);
 
     if (item.note) {
@@ -2088,7 +2035,7 @@ textarea{ resize:vertical; }
     var hasBase = !!state.baseId;
 
     if (!hasBase) {
-      body.innerHTML = '<p class="kf-summary__empty">Start by choosing a base in step 1.</p>';
+      body.innerHTML = '<p class="kf-summary__empty">Start by choosing a starting point in step 1.</p>';
     } else {
       var base = byId(BASES, state.baseId);
       var html = '';
@@ -2099,7 +2046,7 @@ textarea{ resize:vertical; }
           '<div class="kf-sum__thumb"><img src="' + base.img + '&width=120" alt="" loading="lazy" width="56" height="70"></div>' +
           '<div>' +
             '<div class="kf-sum__name">' + base.name + '</div>' +
-            '<div class="kf-sum__note">Base arrangement</div>' +
+            '<div class="kf-sum__note">Starting point</div>' +
           '</div>' +
           '<div class="kf-sum__price">' + money(base.price) + '</div>' +
         '</div>';
@@ -2121,7 +2068,7 @@ textarea{ resize:vertical; }
 
       // Gifts
       html += '<div class="kf-sum__section">' +
-        '<div class="kf-sum__label">Gifts</div>';
+        '<div class="kf-sum__label">Extras</div>';
       if (state.gifts.length) {
         html += '<ul class="kf-sum__list">';
         state.gifts.forEach(function (id) {
@@ -2152,58 +2099,19 @@ textarea{ resize:vertical; }
         html += '</ul></div>';
       }
 
-      // Qty
-      html += '<div class="kf-sum__qty">' +
-        '<span class="kf-sum__qty-label">Quantity</span>' +
-        '<div class="kf-qty" role="group" aria-label="Quantity">' +
-          '<button type="button" data-bqty="-1" aria-label="Decrease quantity">−</button>' +
-          '<span>' + state.qty + '</span>' +
-          '<button type="button" data-bqty="1" aria-label="Increase quantity">+</button>' +
-        '</div>' +
-      '</div>';
-
       body.innerHTML = html;
     }
 
-    var prevTotal = totalEl ? totalEl.dataset.value : '0';
-    var newTotal = grandTotal();
+    var newTotal = unitTotal();
     if (totalEl) {
-      animateTotal(totalEl, Number(prevTotal) || 0, newTotal);
-      totalEl.dataset.value = String(newTotal);
+      totalEl.textContent = hasBase ? money(newTotal) : '—';
     }
     if (mobileTotalEl) {
-      mobileTotalEl.textContent = money(newTotal);
+      mobileTotalEl.textContent = hasBase ? money(newTotal) : '—';
     }
 
     if (sendSide) sendSide.disabled = !hasBase;
     if (sendBottom) sendBottom.disabled = !hasBase;
-
-    // Wire quantity buttons
-    if (body) {
-      body.querySelectorAll('[data-bqty]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var d = Number(btn.getAttribute('data-bqty'));
-          state.qty = Math.min(10, Math.max(1, state.qty + d));
-          saveState();
-          renderSummary();
-        });
-      });
-    }
-  }
-
-  function animateTotal(el, from, to) {
-    if (reduceMotion || from === to) {
-      el.textContent = money(to);
-      return;
-    }
-    var start = performance.now();
-    function frame(now) {
-      var p = Math.min(1, (now - start) / 380);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = money(Math.round(from + (to - from) * eased));
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
   }
 
   function escapeHtml(s) {
@@ -2219,22 +2127,22 @@ textarea{ resize:vertical; }
     lines.push('');
 
     var base = byId(BASES, state.baseId);
-    if (base) lines.push('Base: ' + base.name + ' (' + money(base.price) + ')');
+    if (base) lines.push('Starting point: ' + base.name);
 
     if (state.blooms.length) {
       var b = state.blooms.map(function (id) {
         var o = byId(BLOOMS, id);
-        return o ? o.name + ' (+' + money(o.price) + ')' : null;
+        return o ? o.name : null;
       }).filter(Boolean);
-      lines.push('Blooms: ' + b.join(', '));
+      lines.push('Extra blooms: ' + b.join(', '));
     }
 
     if (state.gifts.length) {
       var g = state.gifts.map(function (id) {
         var o = byId(GIFTS, id);
-        return o ? o.name + ' (+' + money(o.price) + ')' : null;
+        return o ? o.name : null;
       }).filter(Boolean);
-      lines.push('Gifts: ' + g.join(', '));
+      lines.push('Extras: ' + g.join(', '));
     }
 
     var d = state.details;
@@ -2243,12 +2151,10 @@ textarea{ resize:vertical; }
     if (d.message) lines.push('Message on card: "' + d.message + '"');
     if (d.notes) lines.push('Notes: ' + d.notes);
 
-    if (state.qty > 1) lines.push('Quantity: ' + state.qty);
-
     lines.push('');
-    lines.push('Estimated total: ' + money(grandTotal()) + ' AED');
+    lines.push('Estimated starting price: ' + money(unitTotal()) + ' AED');
     lines.push('');
-    lines.push('Please confirm availability, delivery and next steps.');
+    lines.push('Please confirm availability, the final price, and next steps.');
 
     return lines.join('\n');
   }
@@ -2271,7 +2177,6 @@ textarea{ resize:vertical; }
       baseId: null,
       blooms: [],
       gifts: [],
-      qty: 1,
       details: { recipient: '', date: '', message: '', notes: '' }
     };
     try { localStorage.removeItem(BUILD_KEY); } catch (e) {}
@@ -2282,7 +2187,7 @@ textarea{ resize:vertical; }
     buildOptions();
     enableNext(1, false);
     var hint = doc.querySelector('[data-step="1"] .kf-nav__hint');
-    if (hint) hint.textContent = 'Pick a base to continue.';
+    if (hint) hint.textContent = 'Pick a starting point to continue.';
     renderSummary();
     updateChipStates();
     goToStep(1);
@@ -2298,7 +2203,6 @@ textarea{ resize:vertical; }
     // Step chips
     doc.querySelectorAll('[data-goto]').forEach(function (el) {
       el.addEventListener('click', function (e) {
-        // only intercept buttons/links, not the entire summary
         if (el.tagName === 'A') {
           e.preventDefault();
         }
@@ -2366,7 +2270,6 @@ textarea{ resize:vertical; }
 
   /* ===================================================================
      Shared page behaviour — header, drawer, search, cart, newsletter
-     (Same as the other standalone pages so the site feels coherent.)
      =================================================================== */
 
   var PRODUCTS = [
@@ -2668,7 +2571,7 @@ textarea{ resize:vertical; }
 
   if (state.baseId) {
     var h = doc.querySelector('[data-step="1"] .kf-nav__hint');
-    if (h) h.textContent = 'Base selected — you can change it any time.';
+    if (h) h.textContent = 'Starting point selected — you can change it any time.';
   }
 
   // Pre-fill form fields
