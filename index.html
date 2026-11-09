@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kyrah Fleurs | Flowers and personalised gifts, delivered across the UAE</title>
+<meta name="description" content="Handcrafted flower boxes, personalised gifting and corporate gifts from Kyrah Fleurs. Based in Ajman, delivering across the UAE.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F5;--bg2:#F3EFEB;--blush:#E8C9CC;--champ:#D6BE9B;--sage:#9BA895;--ink:#292725;--ink2:#6b6561;--line:#e4ddd5}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg2)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.bar{background:var(--ink);color:var(--bg);text-align:center;font-size:13px;padding:8px 16px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{font:500 30px "Cormorant Garamond",serif;letter-spacing:.01em}
+nav>ul{display:flex;gap:28px;list-style:none;padding:0}
+nav>ul>li{position:relative;padding:24px 0;font-size:14.5px}
+.mega{position:absolute;left:-40px;top:100%;background:var(--bg);border:1px solid var(--line);padding:28px 32px;display:grid;grid-template-columns:repeat(3,170px);gap:24px 32px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.25s}
+nav li:hover .mega,nav li:focus-within .mega{opacity:1;visibility:visible;transform:none}
+.mega h4{font:600 13px Manrope;margin-bottom:8px;color:var(--ink2)}
+.mega a{display:block;font-size:14px;padding:2px 0}.mega a:hover{color:var(--sage)}
+.tools{display:flex;gap:20px;font-size:14px}
+.menu-btn{display:none;background:none;border:0;font:inherit;cursor:pointer}
+.hero{display:grid;grid-template-columns:5fr 7fr;min-height:calc(100vh - 110px);max-height:820px}
+.hero-t{display:flex;flex-direction:column;justify-content:center;padding:64px 56px 64px max(32px,calc((100vw - 1280px)/2 + 32px))}
+.hero h1{font-size:clamp(52px,6.4vw,96px);margin-bottom:24px}
+.hero p{max-width:34ch;color:var(--ink2);margin-bottom:36px;font-size:18px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:500;border:1px solid var(--ink);transition:.2s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.alt{background:transparent;color:var(--ink)}.btn.alt:hover{background:var(--ink);color:var(--bg)}
+.hero-i{position:relative;overflow:hidden}
+.hero-i img{animation:settle 2.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes settle{from{transform:scale(1.08)}to{transform:none}}
+section{padding:96px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px;gap:24px}
+.sh h2{font-size:clamp(36px,4vw,56px)}
+.sh a{font-size:14px;border-bottom:1px solid var(--ink)}
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.p .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.p .ph img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.p:hover .ph img{transform:scale(1.04)}
+.heart{position:absolute;top:12px;right:12px;background:var(--bg);border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:17px;line-height:1}
+.heart[aria-pressed=true]{color:#b4545f}
+.tag{position:absolute;left:0;bottom:0;background:var(--bg);font-size:12.5px;padding:5px 12px}
+.p h3{font-size:25px;margin:16px 0 2px}
+.price{color:var(--ink2);font-size:15px}
+.p .btn{margin-top:12px;padding:10px 18px;font-size:13px}
+.btn[aria-disabled=true]{opacity:.45;pointer-events:none;background:transparent;color:var(--ink)}
+.occ{background:var(--bg2)}
+.og{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:170px;gap:20px}
+.o{position:relative;overflow:hidden}
+.o img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}.o:hover img{transform:scale(1.04)}
+.o span{position:absolute;left:0;bottom:0;background:var(--bg);padding:10px 20px 10px 18px;font:500 26px "Cormorant Garamond",serif}
+.o1{grid-column:1/6;grid-row:1/4}.o2{grid-column:6/9;grid-row:1/3}.o3{grid-column:9/13;grid-row:1/4}
+.o4{grid-column:6/9;grid-row:3/5}.o5{grid-column:1/6;grid-row:4/6}.o6{grid-column:9/13;grid-row:4/6}
+.edit{display:grid;grid-template-columns:7fr 5fr;gap:0;align-items:center;padding:0}
+.edit .im{aspect-ratio:4/3;max-height:640px}
+.edit .tx{padding:56px max(32px,calc((100vw - 1280px)/2 + 32px)) 56px 64px}
+.edit h2{font-size:clamp(38px,4.4vw,64px);margin-bottom:20px}
+.edit p{color:var(--ink2);margin-bottom:28px;max-width:38ch}
+.cl{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.cl a .ph{aspect-ratio:1/1.2;overflow:hidden;margin-bottom:10px}
+.cl img{transition:transform .8s}.cl a:hover img{transform:scale(1.04)}
+.cl h3{font-size:24px}.cl p{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.gift{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.gift h2{font-size:clamp(36px,4vw,56px)}
+.gl a{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+.gl a:last-child{border-bottom:1px solid var(--line)}
+.gl h3{font-size:26px}.gl p{color:var(--ink2);font-size:15px}.gl a:hover h3{color:var(--sage)}
+.corp{background:var(--ink);color:var(--bg)}
+.corp .sh a{border-color:var(--bg)}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #4a4642}
+.cg a{padding:28px 24px 28px 0;border-right:1px solid #4a4642;padding-left:24px}.cg a:first-child{padding-left:0}.cg a:last-child{border:0}
+.cg h3{font-size:26px;margin-bottom:8px}.cg p{font-size:14.5px;color:#bdb6ae}
+.help{background:var(--blush);text-align:center;padding:80px 24px}
+.help h2{font-size:clamp(32px,3.6vw,48px);margin-bottom:12px}
+footer{padding:64px 0 40px;font-size:14px;color:var(--ink2)}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+footer h4{color:var(--ink);font-size:14px;margin-bottom:10px}
+footer a{display:block;padding:2px 0}footer a:hover{color:var(--ink)}
+.fb{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#25D366;color:#fff;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);animation:pop .6s 1.5s both;transition:transform .2s}
+.wa:hover{transform:scale(1.07)}.wa svg{width:28px;height:28px;fill:#fff}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){
+nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 32px 20px}
+nav.open{display:block}nav>ul{flex-direction:column;gap:0}nav>ul>li{padding:12px 0}
+.mega{position:static;opacity:1;visibility:visible;transform:none;border:0;padding:8px 0 0;grid-template-columns:1fr 1fr}
+.menu-btn{display:block}.tools a{display:none}
+.hero{grid-template-columns:1fr;max-height:none}.hero-i{height:62vw;order:-1}.hero-t{padding:40px 32px}
+.prods,.cl{grid-template-columns:repeat(2,1fr)}
+.og{grid-template-columns:1fr 1fr;grid-auto-rows:200px}.o{grid-column:auto!important;grid-row:auto!important}.o1{grid-column:1/3!important}
+.edit,.gift{grid-template-columns:1fr;gap:32px}.edit .tx{padding:40px 32px}
+.gl a{grid-template-columns:1fr;gap:6px}.cg{grid-template-columns:1fr 1fr}.cg a{padding:20px 16px;border-bottom:1px solid #4a4642}
+.fg{grid-template-columns:1fr 1fr}section{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<div class="bar">15% off your first order. Based in Ajman, delivering across the UAE.</div>
+<header><div class="wrap hd">
+<a class="logo" href="https://kyrahfleurs.com/">Kyrah Fleurs</a>
+<nav id="nav"><ul>
+<li><a href="https://kyrahfleurs.com/collections/all">Shop</a>
+<div class="mega">
+<div><h4>Special Occasions</h4><a href="https://kyrahfleurs.com/collections/birthday-celebration">Birthday</a><a href="https://kyrahfleurs.com/collections/love-romance">Love</a><a href="https://kyrahfleurs.com/collections/new-baby-newborn">Newborn</a><a href="https://kyrahfleurs.com/collections/graduation">Graduation</a><a href="https://kyrahfleurs.com/collections/bridal-wedding">Wedding &amp; Trousseau</a></div>
+<div><h4>For Someone Special</h4><a href="https://kyrahfleurs.com/collections/for-her">For Her</a><a href="https://kyrahfleurs.com/collections/for-him">For Him</a><a href="https://kyrahfleurs.com/collections/bridal">For the Bride</a><a href="https://kyrahfleurs.com/collections/for-mother">For Mother</a><a href="https://kyrahfleurs.com/collections/for-a-friend">For a Friend</a></div>
+<div><h4>The Classics</h4><a href="https://kyrahfleurs.com/collections/flowers">Flowers</a><a href="https://kyrahfleurs.com/collections/bundles">Bundles</a><a href="https://kyrahfleurs.com/collections/chocolate">Chocolates</a><a href="https://kyrahfleurs.com/collections/hampers">Hampers</a><a href="https://kyrahfleurs.com/collections/add-ons">Add ons</a></div>
+<div><h4>In Season</h4><a href="https://kyrahfleurs.com/collections/autumn">Autumn</a><a href="https://kyrahfleurs.com/collections/diwali">Diwali</a><a href="https://kyrahfleurs.com/collections/uae-national-day">UAE National Day</a><a href="https://kyrahfleurs.com/collections/christmas">Christmas</a></div>
+<div><h4>Personalised Gifting</h4><a href="https://kyrahfleurs.com/collections/wedding-gifting">Wedding Gifting</a><a href="https://kyrahfleurs.com/collections/baby-gifting">Baby Gifting</a><a href="https://kyrahfleurs.com/collections/celebration-gifting">Celebration Gifting</a><a href="https://kyrahfleurs.com/collections/personalised-engraving">Engraving</a><a href="https://kyrahfleurs.com/pages/create-your-own-gift">Create your own</a></div>
+</div></li>
+<li><a href="https://kyrahfleurs.com/pages/corporate-gifting">Corporate</a>
+<div class="mega"><div><h4>Corporate Gifting</h4><a href="https://kyrahfleurs.com/collections/client-gifting">Client Gifting</a><a href="https://kyrahfleurs.com/collections/eployee-gifting">Employee Gifting</a><a href="https://kyrahfleurs.com/collections/seasonal-gifting">Seasonal Gifting</a><a href="https://kyrahfleurs.com/collections/branded-gifting">Branded Gifting</a></div><div><h4>Events</h4><a href="https://kyrahfleurs.com/collections/corporate-events">Corporate Events</a></div></div></li>
+<li><a href="https://kyrahfleurs.com/collections/private-events-parties">Events</a>
+<div class="mega"><div><h4>Events</h4><a href="https://kyrahfleurs.com/collections/private-events-parties">Private Events &amp; Parties</a><a href="https://kyrahfleurs.com/collections/proposals">Proposals</a><a href="https://kyrahfleurs.com/collections/hotels-resorts">Hotels &amp; Resorts</a></div></div></li>
+<li><a href="https://kyrahfleurs.com/pages/bespoke">The Kyrah Concierge</a></li>
+</ul></nav>
+<div class="tools"><a href="https://kyrahfleurs.com/search">Search</a><a href="https://kyrahfleurs.com/customer_authentication/redirect?locale=en&region_country=AE">Log in</a><a href="#top-picks">Wishlist <span id="wc">0</span></a><a href="https://kyrahfleurs.com/cart" style="display:inline">Cart</a><button class="menu-btn" id="mb" aria-expanded="false">Menu</button></div>
+</div></header>
+
+<main>
+<div class="hero">
+<div class="hero-t"><h1>Say it with Kyrah.</h1><p>Flowers, gifts and personal touches for the moments that matter.</p>
+<div class="btns"><a class="btn" href="https://kyrahfleurs.com/collections/all">Shop Flowers &amp; Gifts</a><a class="btn alt" href="https://wa.me/message/SIJKBNHEFLDGF1">Create a Personalised Gift</a></div></div>
+<div class="hero-i"><img src="https://kyrahfleurs.com/cdn/shop/files/the-secret-garden-assortment-hero.jpg?width=1500" alt="The Secret Garden Assortment by Kyrah Fleurs on a cream plinth"></div>
+</div>
+
+<section id="top-picks"><div class="wrap">
+<div class="sh rv"><h2>Top Picks</h2><a href="https://kyrahfleurs.com/collections/all">View all</a></div>
+<div class="prods rv">
+<article class="p"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-botanica-arrangement.png?width=700" alt="Butterfly Arrangement, a sculptural sage leaf arrangement with blush and ivory roses"><button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="botanica">♡</button><span class="tag">Sold out</span></div><h3><a href="https://kyrahfleurs.com/products/the-botanica-arrangement">Butterfly Arrangement</a></h3><div class="price">Dhs. 250.00 AED</div><a class="btn alt" aria-disabled="true" href="#">Sold out</a></article>
+<article class="p"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/zeina-wedding-trunk-bloom-kyrah-fleurs.png?width=700" alt="Zeina Wedding Gifting Trunk Bloom floral display"><button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="zeina">♡</button></div><h3><a href="https://kyrahfleurs.com/products/zeina-wedding-gifting-trunk-bloom">Zeina gifting Trunk Bloom</a></h3><div class="price">From Dhs. 1,500.00 AED</div><a class="btn" href="https://kyrahfleurs.com/products/zeina-wedding-gifting-trunk-bloom">Choose options</a></article>
+<article class="p"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-noor-quran-drawer-box.png?width=700" alt="The Noor Quran Drawer Box, an arched leather-style display box with a lower drawer"><button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="noor">♡</button><span class="tag">Sold out</span></div><h3><a href="https://kyrahfleurs.com/products/the-noor-quran-drawer-box">Quran Drawer Box</a></h3><div class="price">Dhs. 750.00 AED</div><a class="btn alt" aria-disabled="true" href="#">Sold out</a></article>
+<article class="p"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-sienna-arrangement-hero.png?width=700" alt="The Sienna Arrangement in burgundy, terracotta and peach tones"><button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="sienna">♡</button><span class="tag">Sold out</span></div><h3><a href="https://kyrahfleurs.com/products/the-sienna-arrangement">The Sienna Arrangement</a></h3><div class="price">Dhs. 300.00 AED</div><a class="btn alt" aria-disabled="true" href="#">Sold out</a></article>
+</div>
+<p class="rv" style="margin-top:28px;color:var(--ink2);font-size:14px">Also in the collection: <a style="border-bottom:1px solid" href="https://kyrahfleurs.com/products/oval-pistachio-box">Oval Pistachio Box, Dhs. 400.00 AED</a> (sold out at time of writing).</p>
+</div></section>
+
+<section class="occ"><div class="wrap">
+<div class="sh rv"><h2>Special Occasions</h2><a href="https://kyrahfleurs.com/collections/all">All occasions</a></div>
+<div class="og rv">
+<a class="o o1" href="https://kyrahfleurs.com/collections/birthday-celebration"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/oval-pistachio-box.png?width=1000" alt="Oval Pistachio Box floral arrangement"><span>Birthday</span></a>
+<a class="o o2" href="https://kyrahfleurs.com/collections/new-baby-newborn"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-ivory-fairy-box.png?width=800" alt="The Ivory Fairy Box with ivory roses and preserved moss"><span>Newborn</span></a>
+<a class="o o3" href="https://kyrahfleurs.com/collections/love-romance"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/IMG-4368.png?width=900" alt="Kyrah Fleurs love and romance arrangement"><span>Love</span></a>
+<a class="o o4" href="https://kyrahfleurs.com/collections/bridal-wedding"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/zeina-wedding-trunk-bloom-kyrah-fleurs.png?width=800" alt="Wedding trunk bloom display"><span>Wedding &amp; Bridal</span></a>
+<a class="o o5" href="https://kyrahfleurs.com/collections/graduation"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/IMG-4377.png?width=1000" alt="Custom graduation flower box"><span>Graduation</span></a>
+<a class="o o6" href="https://kyrahfleurs.com/collections/for-her"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-sienna-arrangement-hero.png?width=800" alt="The Sienna Arrangement"><span>For Her</span></a>
+</div></div></section>
+
+<section style="padding:0"><div class="edit">
+<div class="im"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-secret-garden-assortment-hero.jpg?width=1500" alt="The Secret Garden Assortment"></div>
+<div class="tx rv"><h2>Our signature handcrafted flower boxes.</h2><p>Each box is put together by hand, then finished with the personal touches you choose.</p><a class="btn" href="https://kyrahfleurs.com/collections/flowers">Shop Flowers</a></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sh rv"><h2>The Classics</h2></div>
+<div class="cl rv">
+<a href="https://kyrahfleurs.com/collections/flowers"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-secret-garden-assortment-hero.jpg?width=600" alt="Flower boxes"></div><h3>Flowers</h3><p>Our signature handcrafted flower boxes.</p></a>
+<a href="https://kyrahfleurs.com/collections/bundles"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/IMG-4385.png?width=600" alt="Bundles"></div><h3>Bundles</h3></a>
+<a href="https://kyrahfleurs.com/collections/chocolate"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/IMG-4389.png?width=600" alt="Chocolate"></div><h3>Chocolate</h3><p>Premium chocolate, on its own or paired with flowers.</p></a>
+<a href="https://kyrahfleurs.com/collections/hampers"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-sienna-arrangement-hero.png?width=600" alt="Hampers"></div><h3>Hampers</h3><p>Luxury gift hampers for every occasion.</p></a>
+<a href="https://kyrahfleurs.com/collections/add-ons"><div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/collections/blackballoon.png?width=600" alt="Add-ons"></div><h3>Add-ons</h3><p>Optional finishing touches for your packaging.</p></a>
+</div></div></section>
+
+<section class="occ"><div class="wrap gift">
+<div class="rv"><h2>Personalised Gifting</h2><p style="color:var(--ink2);margin:16px 0 28px;max-width:34ch">Choose your box, flowers, gifts and colours, or let us build it with you.</p><a class="btn" href="https://kyrahfleurs.com/pages/create-your-own-gift">Create your own gift</a></div>
+<div class="gl rv">
+<a href="https://kyrahfleurs.com/collections/wedding-gifting"><h3>Wedding Gifting</h3><p>Proposal boxes, bridal gifts, wedding favours and meaningful gifts.</p></a>
+<a href="https://kyrahfleurs.com/collections/baby-gifting"><h3>Baby Gifting</h3><p>Pregnancy announcements, baby showers, newborn arrivals and new parents.</p></a>
+<a href="https://kyrahfleurs.com/collections/celebration-gifting"><h3>Celebration Gifting</h3><p>Birthdays, anniversaries, graduations, housewarmings and milestones.</p></a>
+<a href="https://kyrahfleurs.com/collections/personalised-engraving"><h3>Personalised Engraving</h3><p>Engraved pieces to make a gift unmistakably theirs.</p></a>
+</div></div></section>
+
+<section class="corp"><div class="wrap">
+<div class="sh rv"><h2>Corporate Gifting</h2><a href="https://kyrahfleurs.com/pages/corporate-gifting">Corporate gifting</a></div>
+<div class="cg rv">
+<a href="https://kyrahfleurs.com/collections/client-gifting"><h3>Client Gifting</h3><p>Thoughtful gifts for clients, partners and valued business relationships.</p></a>
+<a href="https://kyrahfleurs.com/collections/employee-gifting"><h3>Employee Gifting</h3><p>Welcomes, appreciation, achievements and milestones.</p></a>
+<a href="https://kyrahfleurs.com/collections/seasonal-gifting"><h3>Seasonal Gifting</h3><p>Ramadan, Eid, UAE National Day and other seasonal occasions.</p></a>
+<a href="https://kyrahfleurs.com/collections/branded-gifting"><h3>Branded Gifting</h3><p>Custom gifts, flowers and packaging finished with your branding.</p></a>
+</div></div></section>
+
+<div class="help"><h2>Need a little help? We’re here for you.</h2><p>Chat now or speak with our team on <a style="border-bottom:1px solid" href="https://wa.me/message/SIJKBNHEFLDGF1">+971 50 888 6470</a></p></div>
+</main>
+
+<footer><div class="wrap">
+<div class="fg">
+<div><div class="logo" style="color:var(--ink);margin-bottom:8px">Kyrah Fleurs</div>Flowers, gifts and personal touches. Based in Ajman, delivering across the UAE.</div>
+<div><h4>Shop</h4><a href="https://kyrahfleurs.com/collections/all">All products</a><a href="https://kyrahfleurs.com/collections/flowers">Flowers</a><a href="https://kyrahfleurs.com/collections/hampers">Hampers</a><a href="https://kyrahfleurs.com/collections/chocolate">Chocolates</a></div>
+<div><h4>Policies</h4><a href="https://kyrahfleurs.com/policies/shipping-policy">Shipping</a><a href="https://kyrahfleurs.com/policies/refund-policy">Refunds</a><a href="https://kyrahfleurs.com/policies/privacy-policy">Privacy</a><a href="https://kyrahfleurs.com/policies/terms-of-service">Terms</a></div>
+<div><h4>Follow</h4><a href="https://www.instagram.com/kyrahfleurs">Instagram</a><a href="https://www.tiktok.com/@kyrahfleurs">TikTok</a><a href="https://pin.it/4FVtb2PVo">Pinterest</a><a href="https://snapchat.com/t/5EX0N0Td">Snapchat</a></div>
+</div>
+<div class="fb"><span>© 2026 Kyrah Fleurs</span><span>Design prototype</span></div>
+</div></footer>
+
+<a class="wa" href="https://wa.me/message/SIJKBNHEFLDGF1" aria-label="Chat with Kyrah Fleurs on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800 0-1.300.7-1.900.9-2.200.2-.2.5-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.300 0 .500l-.3.400-.4.400c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.400.3.100.5.100.6-.1l.9-1.100c.2-.2.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z"/></svg></a>
+
+<script>
+const mb=document.getElementById('mb'),nav=document.getElementById('nav');
+mb.onclick=()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+let wl=[];try{wl=JSON.parse(localStorage.getItem('kf-wl')||'[]')}catch(e){}
+const wc=document.getElementById('wc');
+const sync=()=>{wc.textContent=wl.length;document.querySelectorAll('.heart').forEach(h=>{const on=wl.includes(h.dataset.id);h.setAttribute('aria-pressed',on);h.textContent=on?'♥':'♡'})};
+document.querySelectorAll('.heart').forEach(h=>h.onclick=()=>{const i=h.dataset.id;wl=wl.includes(i)?wl.filter(x=>x!==i):[...wl,i];try{localStorage.setItem('kf-wl',JSON.stringify(wl))}catch(e){}sync()});
+sync();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden'}));
+</script>
+</body></html>
