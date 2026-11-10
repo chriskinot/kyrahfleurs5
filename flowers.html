@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flowers | Kyrah Fleurs</title>
+<meta name="description" content="Handcrafted flower boxes, hatboxes and bouquets from Kyrah Fleurs. Based in Ajman, delivering across the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600&family=Manrope:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F5;--bg2:#F3EFEB;--blush:#E8C9CC;--champ:#D6BE9B;--sage:#9BA895;--ink:#292725;--ink2:#6b6561;--line:#e4ddd5}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.6 Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg2)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.05}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+
+/* ---------- trust strip + header ---------- */
+.trust{background:var(--ink);color:var(--bg);font-size:12.5px}
+.trust .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px}
+header{background:var(--bg);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;font-size:13.5px}
+.top .l{display:flex;gap:18px}.top .r{display:flex;gap:22px;justify-content:flex-end;align-items:center}
+.logo{font:500 34px "Cormorant Garamond",serif;letter-spacing:.02em}
+nav.main{border-top:1px solid var(--line)}
+nav.main>ul{list-style:none;padding:0;display:flex;justify-content:center;gap:34px}
+nav.main>ul>li{position:relative;font-size:13.5px;font-weight:500}
+nav.main>ul>li>a{display:block;padding:14px 0}
+.dd{position:absolute;top:100%;left:-18px;min-width:210px;background:var(--bg);border:1px solid var(--line);padding:14px 20px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s;z-index:5}
+li:hover>.dd,li:focus-within>.dd{opacity:1;visibility:visible;transform:none}
+.dd a{display:block;padding:4px 0;font-weight:400;font-size:14px}.dd a:hover{color:var(--sage)}
+.mb{display:none;background:none;border:0;cursor:pointer;padding:6px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;padding:13px 26px;background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:500;border:1px solid var(--ink);transition:.2s;cursor:pointer;text-align:center}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--bg)}
+
+/* ---------- breadcrumb ---------- */
+.crumb{font-size:12.5px;color:var(--ink2);padding:20px 0 0}
+.crumb a:hover{color:var(--ink)}
+.crumb span{opacity:.5;margin:0 8px}
+
+/* ---------- collection hero ---------- */
+.colhero{padding:36px 0 22px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.colhero .kick{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px;padding-left:34px;position:relative}
+.colhero .kick::before{content:"";position:absolute;left:0;top:50%;width:24px;border-top:1px solid var(--ink2)}
+.colhero h1{font-size:clamp(40px,5.2vw,68px);letter-spacing:-.015em;margin-bottom:10px}
+.colhero p{color:var(--ink2);max-width:52ch;font-size:15.5px}
+
+/* ---------- carousel section ---------- */
+.carousel-section{padding-bottom:72px}
+.carousel-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.count{font-size:13px;color:var(--ink2)}
+.count b{color:var(--ink);font-weight:500}
+.carousel-controls{display:flex;gap:8px}
+.carousel-nav{width:44px;height:44px;border:1px solid var(--line);background:none;font-size:20px;line-height:1;cursor:pointer;transition:.2s;display:grid;place-items:center;color:var(--ink)}
+.carousel-nav:hover:not(:disabled){background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.carousel-nav:disabled{opacity:.3;cursor:not-allowed}
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 0 6px;scrollbar-width:none;-ms-overflow-style:none}
+.carousel::-webkit-scrollbar{display:none}
+.carousel:focus-visible{outline:2px solid var(--ink);outline-offset:6px}
+.carousel .pcard{flex:0 0 calc(25% - 16.5px);scroll-snap-align:start}
+.carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.dot{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0;transition:width .25s,background .25s;flex:none}
+.dot:hover{background:var(--ink2)}
+.dot.active{width:26px;border-radius:4px;background:var(--ink)}
+
+/* ---------- product card ---------- */
+.pcard{position:relative;display:flex;flex-direction:column}
+.pcard .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#F2EBE2,#E5DACD);margin-bottom:14px}
+.pcard .ph img{transition:transform .85s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .ph img{transform:scale(1.045)}
+.heart{position:absolute;top:10px;right:10px;background:var(--bg);border:0;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;display:grid;place-items:center;transition:.2s;z-index:2;box-shadow:0 2px 8px rgba(41,39,37,.08)}
+.heart:hover{transform:scale(1.08)}
+.heart[aria-pressed="true"]{color:#b4545f}
+.tag{position:absolute;left:0;bottom:0;background:var(--bg);font-size:11.5px;letter-spacing:.04em;padding:5px 11px;z-index:2}
+.pcard h3{font-size:22px;margin-bottom:2px;line-height:1.15}
+.pcard h3 a:hover{color:var(--sage)}
+.pcard .price{font-size:13.5px;color:var(--ink2)}
+.pcard .quick{margin-top:10px;padding:10px 14px;font-size:12px;border:1px solid var(--line);background:none;cursor:pointer;transition:.2s;text-align:center}
+.pcard .quick:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* ---------- editorial band ---------- */
+.edit{display:grid;grid-template-columns:7fr 5fr;align-items:center;background:var(--bg2)}
+.edit .im{aspect-ratio:4/3;max-height:520px;overflow:hidden}
+.edit .tx{padding:48px max(28px,calc((100vw - 1360px)/2 + 28px)) 48px 64px}
+.edit h2{font-size:clamp(32px,3.8vw,52px);margin-bottom:16px}
+.edit p{color:var(--ink2);margin-bottom:26px;max-width:36ch}
+
+/* ---------- help ---------- */
+.help{background:var(--blush);text-align:center;padding:72px 24px}
+.help h2{font-size:clamp(28px,3.4vw,44px);margin-bottom:10px}
+.help p{color:var(--ink2)}
+
+/* ---------- footer ---------- */
+footer{padding:60px 0 32px;font-size:14px;color:var(--ink2);border-top:1px solid var(--line)}
+.fg{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:32px;margin-bottom:40px}
+footer h4{color:var(--ink);font-size:13.5px;margin-bottom:10px}
+footer a{display:block;padding:2px 0}footer a:hover{color:var(--ink)}
+.fb{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ---------- whatsapp ---------- */
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#25D366;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .2s}
+.wa:hover{transform:scale(1.07)}.wa svg{width:28px;height:28px;fill:#fff}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:13px 22px;font-size:13.5px;z-index:70;opacity:0;pointer-events:none;transition:.35s;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- drawer ---------- */
+#drawer{display:none}
+body.lock{overflow:hidden}
+
+@media(max-width:1100px){
+.carousel .pcard{flex:0 0 calc(33.333% - 14.667px)}
+}
+@media(max-width:800px){
+.carousel .pcard{flex:0 0 calc(50% - 11px)}
+}
+@media(max-width:1000px){
+.trust .wrap span:nth-child(n+2){display:none}.trust .wrap{justify-content:center}
+.top{height:62px}.top .l a,.top .r a.hide{display:none}.logo{font-size:28px}
+.mb{display:block}
+nav.main{display:none!important}
+#drawer{display:flex;flex-direction:column;position:fixed;inset:0;z-index:60;background:#fff;padding:max(18px,env(safe-area-inset-top)) 22px max(10px,env(safe-area-inset-bottom));opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .28s,transform .28s,visibility .28s;overflow-y:auto}
+#drawer.open{opacity:1;visibility:visible;transform:none}
+.dtop{display:flex;align-items:center;gap:16px;margin-bottom:34px}
+#dx{background:none;border:0;padding:8px;cursor:pointer;color:var(--ink);flex:none}
+.dtop form{flex:1}.dtop input{width:100%;height:56px;border:0;border-radius:999px;background:#f6f6f6;padding:0 24px;font:500 17px Manrope,sans-serif;color:var(--ink)}
+.dtop input::placeholder{color:#b5b5b5}
+.dnav{display:flex;flex-direction:column;flex:1}
+.dnav a{display:flex;align-items:center;gap:16px;padding:19px 4px;font:500 21px Manrope,sans-serif;color:var(--ink)}
+.dnav a svg{flex:none}
+.dbot{border-top:1px solid #e8e8e8;margin-top:18px}
+.dbot>a,.dcur{display:flex;align-items:center;gap:14px;padding:20px 4px;font:400 16px Manrope,sans-serif;border-bottom:1px solid #e8e8e8}
+.dbot em,.dcur em{margin-left:auto;font-style:normal;color:#b5b5b5;font-weight:500}
+.dbot>a span,.dcur span{flex:none}
+.wrap{padding:0 20px}
+.colhero{padding:28px 0 18px}
+.carousel{gap:14px}
+.carousel .pcard{flex:0 0 78%}
+.pcard h3{font-size:20px}
+.edit{grid-template-columns:1fr}.edit .tx{padding:36px 20px}
+.fg{grid-template-columns:1fr 1fr}
+.carousel-head{margin-bottom:16px}
+.carousel-nav{width:40px;height:40px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="trust"><div class="wrap">
+<span>15% off your first order</span>
+<span>Based in Ajman, delivering across the UAE</span>
+<span>WhatsApp +971 50 888 6470</span>
+</div></div>
+
+<header>
+<div class="wrap top">
+<div class="l"><a href="https://www.instagram.com/kyrahfleurs">Instagram</a><a href="https://www.tiktok.com/@kyrahfleurs">TikTok</a></div>
+<a class="logo" href="https://kyrahfleurs.com/">Kyrah Fleurs</a>
+<div class="r">
+<a class="hide" href="https://kyrahfleurs.com/search">Search</a>
+<a class="hide" href="https://kyrahfleurs.com/customer_authentication/redirect?locale=en&region_country=AE">Login</a>
+<button class="mb" id="mb" aria-label="Open menu" aria-expanded="false">
+<svg width="34" height="14" viewBox="0 0 34 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M2 2h30M2 12h20"/></svg>
+</button>
+</div>
+</div>
+<nav class="main"><ul>
+<li><a href="https://kyrahfleurs.com/collections/all">Shop All</a></li>
+<li><a href="#plan">Plan Delivery</a></li>
+<li><a href="flowers.html">Flowers</a></li>
+<li><a href="https://kyrahfleurs.com/collections/bundles">Bundles</a></li>
+<li><a href="https://kyrahfleurs.com/collections/chocolate">Chocolates</a></li>
+<li><a href="https://kyrahfleurs.com/collections/hampers">Hampers</a></li>
+<li><a href="https://kyrahfleurs.com/pages/corporate-gifting">Corporate</a></li>
+<li><a href="https://kyrahfleurs.com/pages/bespoke">Kyrah Concierge</a></li>
+</ul></nav>
+</header>
+
+<div id="drawer" aria-hidden="true">
+<div class="dtop">
+<button type="button" id="dx" aria-label="Close menu"><svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+<form action="https://kyrahfleurs.com/search" method="get" role="search"><input type="search" name="q" placeholder="Search" aria-label="Search products"></form>
+</div>
+<nav class="dnav" aria-label="Menu">
+<a href="https://kyrahfleurs.com/"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+<a href="https://kyrahfleurs.com/collections/all"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Shop</a>
+<a href="https://kyrahfleurs.com/collections/birthday-celebration"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/></svg>Special Occasions</a>
+<a href="#plan"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Plan Delivery</a>
+<a href="https://kyrahfleurs.com/pages/corporate-gifting"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3"/><path d="M3 13h18"/></svg>Corporate</a>
+</nav>
+<div class="dbot">
+<a href="https://wa.me/message/SIJKBNHEFLDGF1"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.4z"/></svg><span>Chat on WhatsApp</span><em>+971 50 888 6470</em></a>
+<div class="dcur"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2 0 3 5 1.5 5 4 0 1.2-1 2-2.5 2-1.1 0-2.1-.5-2.6-1.5M12 6.5V8M12 16v1.5"/></svg><span>Currency</span><em>AED</em></div>
+</div>
+</div>
+
+<main>
+<div class="wrap">
+<nav class="crumb" aria-label="Breadcrumb">
+<a href="https://kyrahfleurs.com/">Home</a><span>/</span>
+Flowers
+</nav>
+</div>
+
+<div class="wrap">
+<div class="colhero">
+<p class="kick">The Collection</p>
+<h1>Flowers</h1>
+<p>Hand-tied arrangements, hatboxes and bouquets — each one chosen the morning it travels. Delivered across the UAE.</p>
+</div>
+</div>
+
+<section class="carousel-section">
+<div class="wrap">
+<div class="carousel-head">
+<p class="count"><b>7</b> products in this collection</p>
+<div class="carousel-controls">
+<button class="carousel-nav" id="prevBtn" aria-label="Previous product" aria-controls="carousel">‹</button>
+<button class="carousel-nav" id="nextBtn" aria-label="Next product" aria-controls="carousel">›</button>
+</div>
+</div>
+
+<div class="carousel-wrap">
+<div class="carousel" id="carousel" role="region" aria-label="Flower collection, swipe or use arrow buttons to browse" tabindex="0">
+
+<article class="pcard" data-name="The Secret Garden Assortment">
+<div class="ph">
+<img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-secret-garden-assortment-hero.jpg?width=700" alt="The Secret Garden Assortment">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="secret-garden">♡</button>
+<span class="tag">Signature</span>
+</div>
+<h3><a href="secret-garden-assortment.html">The Secret Garden Assortment</a></h3>
+<p class="price">Dhs. 300.00 AED</p>
+<button class="quick" data-id="secret-garden">Quick add</button>
+</article>
+
+<article class="pcard" data-name="Oval Pistachio Box">
+<div class="ph">
+<img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/oval-pistachio-box.png?width=700" alt="Oval Pistachio Box">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="oval-pistachio">♡</button>
+</div>
+<h3><a href="oval-pistachio-box.html">Oval Pistachio Box</a></h3>
+<p class="price">Dhs. 400.00 AED</p>
+<button class="quick" data-id="oval-pistachio">Quick add</button>
+</article>
+
+<article class="pcard" data-name="Basket Flower Assortment">
+<div class="ph">
+<img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/basket-flower-assortment.png?width=700" alt="Basket Flower Assortment">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="basket">♡</button>
+</div>
+<h3><a href="basket-flower-assortment.html">Basket Flower Assortment</a></h3>
+<p class="price">Dhs. 350.00 AED</p>
+<button class="quick" data-id="basket">Quick add</button>
+</article>
+
+<article class="pcard" data-name="The Alba Hatbox">
+<div class="ph">
+<img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-alba-hatbox.png?width=700" alt="The Alba Hatbox">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="alba">♡</button>
+</div>
+<h3><a href="alba-hotbox.html">The Alba Hatbox</a></h3>
+<p class="price">Dhs. 300.00 AED</p>
+<button class="quick" data-id="alba">Quick add</button>
+</article>
+
+<article class="pcard" data-name="The Amélie Bouquet">
+<div class="ph">
+<img loading="lazy" src="amelie-new.png" alt="The Amélie Bouquet">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="amelie">♡</button>
+</div>
+<h3><a href="amelie-bouqet.html">The Amélie Bouquet</a></h3>
+<p class="price">Dhs. 395.00 AED</p>
+<button class="quick" data-id="amelie">Quick add</button>
+</article>
+
+<article class="pcard" data-name="The Rosé Hatbox">
+<div class="ph">
+<img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-rose-hatbox.png?width=700" alt="The Rosé Hatbox">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="rose">♡</button>
+</div>
+<h3><a href="rose-hatbox.html">The Rosé Hatbox</a></h3>
+<p class="price">Dhs. 300.00 AED</p>
+<button class="quick" data-id="rose">Quick add</button>
+</article>
+
+<article class="pcard" data-name="Butterfly Arrangement">
+<div class="ph">
+<img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-botanica-arrangement.png?width=700" alt="Butterfly Arrangement">
+<button class="heart" aria-pressed="false" aria-label="Save to wishlist" data-id="butterfly">♡</button>
+<span class="tag">New</span>
+</div>
+<h3><a href="butterfly-arrangement.html">Butterfly Arrangement</a></h3>
+<p class="price">Dhs. 250.00 AED</p>
+<button class="quick" data-id="butterfly">Quick add</button>
+</article>
+
+</div>
+</div>
+
+<div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel navigation"></div>
+</div>
+</section>
+
+<div class="edit">
+<div class="im"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-secret-garden-assortment-hero.jpg?width=1500" alt="Kyrah Fleurs flowers styled at home"></div>
+<div class="tx">
+<h2>Made by hand, finished with your words.</h2>
+<p>Every box is arranged the morning it travels. Your card is written by hand, your message kept exactly as you wrote it.</p>
+<a class="btn" href="https://kyrahfleurs.com/pages/bespoke">Build something bespoke</a>
+</div>
+</div>
+
+<div class="help">
+<h2>Need a little help? We're here for you.</h2>
+<p>Chat now or speak with our team on <a style="border-bottom:1px solid var(--ink2)" href="https://wa.me/message/SIJKBNHEFLDGF1">+971 50 888 6470</a></p>
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="fg">
+<div>
+<div class="logo" style="font-size:30px">Kyrah Fleurs</div>
+<p style="margin-top:6px;max-width:30ch">Flowers, gifts and personal touches. Based in Ajman, delivering across the UAE.</p>
+</div>
+<div><h4>Occasion</h4><a href="https://kyrahfleurs.com/collections/birthday-celebration">Birthday</a><a href="https://kyrahfleurs.com/collections/love-romance">Love</a><a href="https://kyrahfleurs.com/collections/new-baby-newborn">Newborn</a><a href="https://kyrahfleurs.com/collections/graduation">Graduation</a></div>
+<div><h4>Collection</h4><a href="flowers.html">Flowers</a><a href="https://kyrahfleurs.com/collections/bundles">Bundles</a><a href="https://kyrahfleurs.com/collections/chocolate">Chocolates</a><a href="https://kyrahfleurs.com/collections/hampers">Hampers</a></div>
+<div><h4>Services</h4><a href="https://kyrahfleurs.com/pages/corporate-gifting">Corporate Gifting</a><a href="https://kyrahfleurs.com/collections/wedding-gifting">Wedding Gifting</a><a href="https://kyrahfleurs.com/pages/bespoke">Kyrah Concierge</a></div>
+<div><h4>Info</h4><a href="https://kyrahfleurs.com/policies/shipping-policy">Shipping</a><a href="https://kyrahfleurs.com/policies/refund-policy">Refunds</a><a href="https://kyrahfleurs.com/policies/privacy-policy">Privacy</a><a href="https://kyrahfleurs.com/policies/terms-of-service">Terms</a></div>
+</div>
+<div class="fb">
+<span>© 2026 Kyrah Fleurs</span>
+<span><a style="display:inline" href="https://www.instagram.com/kyrahfleurs">Instagram</a> · <a style="display:inline" href="https://www.tiktok.com/@kyrahfleurs">TikTok</a> · <a style="display:inline" href="https://pin.it/4FVtb2PVo">Pinterest</a> · <a style="display:inline" href="https://snapchat.com/t/5EX0N0Td">Snapchat</a></span>
+</div>
+</div>
+</footer>
+
+<a class="wa" href="https://wa.me/message/SIJKBNHEFLDGF1" aria-label="Chat with Kyrah Fleurs on WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $  = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+
+  /* ---------- mobile drawer ---------- */
+  const drawer = $('#drawer'), mb = $('#mb');
+  const setDrawer = open => {
+    drawer.classList.toggle('open', open);
+    drawer.setAttribute('aria-hidden', !open);
+    mb.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('lock', open);
+    if (open) drawer.querySelector('#dx').focus(); else mb.focus();
+  };
+  mb.addEventListener('click', () => setDrawer(true));
+  $('#dx').addEventListener('click', () => setDrawer(false));
+  $$('#drawer .dnav a, #drawer .dbot a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
+  matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) setDrawer(false); });
+
+  /* ---------- wishlist (hearts on cards only — no header counter) ---------- */
+  let wl = [];
+  try { wl = JSON.parse(localStorage.getItem('kf-wl') || '[]'); } catch (e) {}
+  const syncHearts = () => {
+    $$('.heart').forEach(h => {
+      const on = wl.includes(h.dataset.id);
+      h.setAttribute('aria-pressed', on);
+      h.textContent = on ? '♥' : '♡';
+    });
+  };
+  $$('.heart').forEach(h => h.addEventListener('click', () => {
+    const id = h.dataset.id;
+    wl = wl.includes(id) ? wl.filter(x => x !== id) : [...wl, id];
+    try { localStorage.setItem('kf-wl', JSON.stringify(wl)); } catch (e) {}
+    syncHearts();
+    toast(wl.includes(id) ? 'Saved to your wishlist' : 'Removed from your wishlist');
+  }));
+  syncHearts();
+
+  /* ---------- bag (persisted, no header counter shown) ---------- */
+  let bag = 0;
+  try { bag = +(localStorage.getItem('kf-bag') || 0); } catch (e) {}
+
+  /* ---------- toast ---------- */
+  let tId;
+  function toast(text) {
+    const t = $('#toast');
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(tId);
+    tId = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  /* ---------- quick add ---------- */
+  $$('.quick').forEach(b => b.addEventListener('click', () => {
+    bag += 1;
+    try { localStorage.setItem('kf-bag', bag); } catch (e) {}
+    toast('Added to your bag');
+  }));
+
+  /* ---------- carousel ---------- */
+  const carousel = $('#carousel');
+  const cards    = [...carousel.querySelectorAll('.pcard')];
+  const prevBtn  = $('#prevBtn');
+  const nextBtn  = $('#nextBtn');
+  const dotsWrap = $('#carouselDots');
+
+  const dots = cards.map((_, i) => {
+    const d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'dot';
+    d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', 'Go to product ' + (i + 1) + ' of ' + cards.length);
+    d.addEventListener('click', () => scrollToIndex(i));
+    dotsWrap.appendChild(d);
+    return d;
+  });
+
+  const gapPx = () => {
+    const cs = getComputedStyle(carousel);
+    return parseFloat(cs.columnGap || cs.gap) || 22;
+  };
+  const stepWidth = () => cards[0].getBoundingClientRect().width + gapPx();
+
+  function activeIndex() {
+    const cRect = carousel.getBoundingClientRect();
+    let best = 0, bestDist = Infinity;
+    cards.forEach((c, i) => {
+      const d = Math.abs(c.getBoundingClientRect().left - cRect.left);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
+
+  function scrollToIndex(i) {
+    i = Math.max(0, Math.min(cards.length - 1, i));
+    carousel.scrollTo({ left: i * stepWidth(), behavior: 'smooth' });
+  }
+
+  function update() {
+    const max = carousel.scrollWidth - carousel.clientWidth;
+    const sl  = carousel.scrollLeft;
+    const idx = activeIndex();
+    dots.forEach((d, i) => {
+      const on = i === idx;
+      d.classList.toggle('active', on);
+      d.setAttribute('aria-selected', on);
+    });
+    prevBtn.disabled = sl <= 2;
+    nextBtn.disabled = sl >= max - 2;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -stepWidth(), behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left:  stepWidth(), behavior: 'smooth' });
+  });
+
+  carousel.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); nextBtn.click(); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); prevBtn.click(); }
+    if (e.key === 'Home')       { e.preventDefault(); scrollToIndex(0); }
+    if (e.key === 'End')        { e.preventDefault(); scrollToIndex(cards.length - 1); }
+  });
+
+  let raf = null;
+  carousel.addEventListener('scroll', () => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => { update(); raf = null; });
+  }, { passive: true });
+
+  window.addEventListener('resize', () => { update(); });
+
+  update();
+})();
+</script>
+</body>
+</html>

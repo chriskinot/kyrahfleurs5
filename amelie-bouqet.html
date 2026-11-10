@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Amélie Bouquet | Kyrah Fleurs</title>
+<meta name="description" content="The Amélie Bouquet — a hand-tied bouquet by Kyrah Fleurs. Personalise a handwritten card, add a gift and have it delivered across the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600&family=Manrope:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F5;--bg2:#F3EFEB;--blush:#E8C9CC;--champ:#D6BE9B;--sage:#9BA895;--ink:#292725;--ink2:#6b6561;--line:#e4ddd5}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.6 Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg2)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.05}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+
+/* trust strip + header */
+.trust{background:var(--ink);color:var(--bg);font-size:12.5px}
+.trust .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px}
+header{background:var(--bg);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;font-size:13.5px}
+.top .l{display:flex;gap:18px}.top .r{display:flex;gap:22px;justify-content:flex-end;align-items:center}
+.logo{font:500 34px "Cormorant Garamond",serif;letter-spacing:.02em}
+nav.main{border-top:1px solid var(--line)}
+nav.main>ul{list-style:none;padding:0;display:flex;justify-content:center;gap:34px}
+nav.main>ul>li{position:relative;font-size:13.5px;font-weight:500}
+nav.main>ul>li>a{display:block;padding:14px 0}
+.dd{position:absolute;top:100%;left:-18px;min-width:210px;background:var(--bg);border:1px solid var(--line);padding:14px 20px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s;z-index:5}
+li:hover>.dd,li:focus-within>.dd{opacity:1;visibility:visible;transform:none}
+.dd a{display:block;padding:4px 0;font-weight:400;font-size:14px}.dd a:hover{color:var(--sage)}
+.mb{display:none;background:none;border:0;cursor:pointer;padding:6px}
+
+/* buttons */
+.btn{display:inline-block;padding:13px 26px;background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:500;border:1px solid var(--ink);transition:.2s;cursor:pointer;text-align:center}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--bg)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* breadcrumb */
+.crumb{font-size:12.5px;color:var(--ink2);padding:20px 0 0}
+.crumb a:hover{color:var(--ink)}
+.crumb span{opacity:.5;margin:0 8px}
+
+/* product layout */
+.pdp{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:64px;padding:26px 0 80px;align-items:start}
+.gal{position:sticky;top:112px}
+.gal-main{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#F2EBE2,#E5DACD);position:relative}
+.gal-main img{animation:settle 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes settle{from{transform:scale(1.05)}to{transform:none}}
+.gal-main .badge{position:absolute;top:16px;left:16px;background:var(--bg);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;z-index:2}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.thumb{aspect-ratio:1;overflow:hidden;border:1px solid transparent;padding:0;background:none;cursor:pointer;transition:border-color .2s}
+.thumb[aria-current="true"]{border-color:var(--ink)}
+.thumb:hover{border-color:var(--line)}
+
+/* product info */
+.kick{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:16px;padding-left:34px;position:relative}
+.kick::before{content:"";position:absolute;left:0;top:50%;width:24px;border-top:1px solid var(--ink2)}
+.pinfo h1{font-size:clamp(38px,4.4vw,58px);letter-spacing:-.015em;margin-bottom:14px}
+.rate{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink2);margin-bottom:16px}
+.rate b{color:var(--ink);font-weight:500}
+.stars{letter-spacing:2px;color:var(--champ)}
+.price{font-size:19px;color:var(--ink);margin-bottom:6px}
+.price small{font-size:13px;color:var(--ink2);margin-left:8px}
+.stock{font-size:12.5px;color:#4d6a47;display:flex;align-items:center;gap:7px;margin-bottom:22px}
+.stock i{width:7px;height:7px;border-radius:50%;background:#4d6a47;display:inline-block}
+.lede{color:var(--ink2);max-width:44ch;margin-bottom:26px}
+
+/* option groups */
+.opt-group{border-top:1px solid var(--line);padding:20px 0}
+.opt-label{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:500;margin-bottom:12px}
+.opt-label em{font-style:normal;font-weight:400;color:var(--ink2);font-size:12.5px}
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.size{border:1px solid var(--line);background:none;padding:14px 10px;cursor:pointer;text-align:left;transition:.2s}
+.size:hover{border-color:var(--ink2)}
+.size[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.size strong{display:block;font:500 20px "Cormorant Garamond",serif}
+.size small{display:block;color:var(--ink2);font-size:12px}
+.size b{display:block;font-size:12.5px;font-weight:500;margin-top:6px}
+
+/* checkbox rows */
+.check{display:flex;gap:14px;align-items:flex-start;padding:14px 0;cursor:pointer;border-bottom:1px solid var(--line)}
+.check:last-of-type{border-bottom:0}
+.check input{width:20px;height:20px;accent-color:var(--ink);flex:none;margin-top:2px}
+.check .tx{flex:1}
+.check .tx strong{display:block;font-size:14px;font-weight:500}
+.check .tx small{display:block;color:var(--ink2);font-size:12.5px;line-height:1.45}
+.check .amt{font-size:13px;color:var(--ink2);white-space:nowrap}
+
+/* text inputs */
+textarea,input[type=text]{width:100%;border:1px solid var(--line);background:#fff;padding:12px;font:inherit;font-size:16px;color:var(--ink);resize:vertical;border-radius:0}
+.mrow{display:flex;justify-content:space-between;align-items:center;margin:8px 0 14px;font-size:12.5px;color:var(--ink2)}
+.mrow.warn span:first-child{color:#a3452f}
+.seg button{border:1px solid var(--line);background:none;padding:6px 10px;font-size:12px;cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* card preview */
+.card{aspect-ratio:3/4;max-width:250px;margin:0 auto;background:#fffdf9;border:1px solid var(--champ);box-shadow:0 10px 24px rgba(41,39,37,.08);padding:20px 18px;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.card::before{content:"";position:absolute;inset:7px;border:1px solid var(--champ);pointer-events:none}
+.card small{font:500 20px "Cormorant Garamond",serif;text-align:center;margin-bottom:8px;padding-top:2px;display:block}
+.card p{flex:1;white-space:pre-wrap;overflow-wrap:anywhere;overflow:hidden;font-size:15px;line-height:1.5;color:var(--ink)}
+.card p.script{font:500 20px/1.35 Caveat,cursive}
+.card p.serif{font:italic 400 15.5px/1.5 "Cormorant Garamond",serif}
+.card em{font:500 18px Caveat,cursive;text-align:right;font-style:normal;min-height:1.2em}
+
+/* buy row */
+.buy{display:flex;gap:10px;align-items:stretch;margin-top:22px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);flex:none}
+.qty button{width:44px;height:52px;background:none;border:0;cursor:pointer;font-size:18px;line-height:1}
+.qty button:hover{background:var(--bg2)}
+.qty output{min-width:34px;text-align:center;font-size:14px}
+.buy .btn{flex:1;padding:16px 20px;font-size:14px}
+.wish{flex:none;width:52px;border:1px solid var(--line);background:none;cursor:pointer;font-size:18px;transition:.2s}
+.wish:hover{border-color:var(--ink)}
+.wish[aria-pressed="true"]{color:#b4545f;border-color:#b4545f}
+.total{font-size:13px;color:var(--ink2);margin-top:12px;display:flex;justify-content:space-between;align-items:baseline}
+.total b{color:var(--ink);font-weight:500;font-size:15px}
+.bk{font-size:12px;color:var(--ink2);margin-top:8px;display:flex;flex-direction:column;gap:3px;border-top:1px dashed var(--line);padding-top:8px}
+.bk div{display:flex;justify-content:space-between;gap:12px}
+.bk div span:last-child{font-variant-numeric:tabular-nums}
+.del-hint{display:none;align-items:center;gap:10px;margin-top:16px;padding:12px 14px;background:#FBF4E9;border:1px solid #EFE0C7;font-size:13px;color:#7a5a1f;line-height:1.4}
+.del-hint.show{display:flex}
+.del-hint svg{flex:none}
+.ship{display:flex;gap:10px;align-items:flex-start;margin-top:18px;padding:14px 16px;background:var(--bg2);font-size:13px;color:var(--ink2);line-height:1.5}
+.ship svg{flex:none;margin-top:2px}
+
+/* accordions */
+.accs{margin-top:24px;border-top:1px solid var(--line)}
+.acc{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:18px 0;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:500}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1;color:var(--ink2);transition:transform .25s}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc .accb{padding:0 0 20px;font-size:14px;color:var(--ink2);line-height:1.65;max-width:52ch}
+.acc .accb ul{padding-left:18px;margin-top:6px}
+
+/* also like */
+section{padding:72px 0}
+.sh{text-align:center;margin-bottom:36px}
+.sh h2{font-size:clamp(32px,3.6vw,48px)}
+.sh p{color:var(--ink2);margin-top:6px}
+.also{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.p .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#F2EBE2,#E5DACD)}
+.p .ph img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.p:hover .ph img{transform:scale(1.04)}
+.p h3{font-size:23px;margin:14px 0 2px}
+.p .price{font-size:14px;color:var(--ink2);margin:0}
+
+/* editorial band */
+.edit{display:grid;grid-template-columns:7fr 5fr;align-items:center;background:var(--bg2)}
+.edit .im{aspect-ratio:4/3;max-height:520px;overflow:hidden}
+.edit .tx{padding:48px max(28px,calc((100vw - 1360px)/2 + 28px)) 48px 64px}
+.edit h2{font-size:clamp(32px,3.8vw,52px);margin-bottom:16px}
+.edit p{color:var(--ink2);margin-bottom:26px;max-width:36ch}
+
+/* sticky buy bar */
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--bg);border-top:1px solid var(--line);padding:10px 76px 10px 16px;display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s;box-shadow:0 -6px 24px rgba(41,39,37,.08)}
+.stickybar.show{transform:none}
+.stickybar .mini{width:44px;height:52px;flex:none;overflow:hidden}
+.stickybar .tx{flex:1;min-width:0}
+.stickybar .tx strong{display:block;font-size:13.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stickybar .tx span{font-size:12.5px;color:var(--ink2)}
+.stickybar .btn{padding:12px 18px;font-size:13px;white-space:nowrap}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:13px 22px;font-size:13.5px;z-index:70;opacity:0;pointer-events:none;transition:.35s;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* footer */
+footer{padding:60px 0 32px;font-size:14px;color:var(--ink2);border-top:1px solid var(--line)}
+.fg{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:32px;margin-bottom:40px}
+footer h4{color:var(--ink);font-size:13.5px;margin-bottom:10px}
+footer a{display:block;padding:2px 0}footer a:hover{color:var(--ink)}
+.fb{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* whatsapp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#25D366;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .2s}
+.wa:hover{transform:scale(1.07)}.wa svg{width:28px;height:28px;fill:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+/* drawer */
+#drawer{display:none}
+body.lock{overflow:hidden}
+
+/* INLINE DELIVERY PLANNER */
+.dvgroup{border-top:1px solid var(--line);padding:20px 0}
+.dvh{font:500 22px "Cormorant Garamond",serif;display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.dvh b{font:600 12px Manrope;width:22px;height:22px;border:1px solid var(--ink);display:grid;place-items:center;border-radius:50%;flex:none}
+.req{font:500 10px Manrope;letter-spacing:.09em;text-transform:uppercase;color:#a3452f;background:#fbece7;padding:3px 7px;border-radius:2px;margin-left:auto}
+.opt{font:400 12px Manrope;color:var(--ink2)}
+.calh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.calh strong{font:500 16px Manrope}
+.calh button{width:36px;height:36px;border:1px solid var(--line);background:none;font-size:18px;cursor:pointer}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.dow span{font-size:10.5px;color:var(--ink2);padding:2px 0}
+.d{aspect-ratio:1;min-height:34px;border:1px solid transparent;background:none;font:inherit;font-size:13px;cursor:pointer;position:relative}
+.d.av{border-color:var(--line)}.d.av:hover{border-color:var(--ink)}
+.d.sel{background:var(--ink);color:var(--bg)}
+.d.off{color:#bbb3aa;cursor:not-allowed}
+.d.full{color:#bbb3aa;text-decoration:line-through;cursor:not-allowed}
+.d.res{color:#bbb3aa;cursor:not-allowed;background:repeating-linear-gradient(135deg,transparent 0 4px,var(--line) 4px 5px)}
+.leg{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--ink2);margin-top:10px;align-items:center}
+.leg i{display:inline-block;width:11px;height:11px;border:1px solid var(--line);margin-right:-5px}.leg i.f{background:var(--bg2)}.leg i.r{background:repeating-linear-gradient(135deg,transparent 0 2px,var(--line) 2px 3px)}.leg i.a{border-color:var(--ink)}
+.note{font-size:12.5px;color:var(--ink2);margin:10px 0}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.sl{border:1px solid var(--line);background:none;padding:10px 8px;text-align:left;cursor:pointer;font:inherit}
+.sl strong{display:block;font:500 16px "Cormorant Garamond",serif}.sl small{display:block;color:var(--ink2);font-size:11px}
+.sl em{display:inline-block;font-style:normal;font-size:11px;margin-top:5px;color:#4d6a47}
+.sl.few em{color:#9a6a1f}.sl.lock{opacity:.5;cursor:not-allowed}.sl.lock em{color:var(--ink2)}
+.sl[aria-checked=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.covers{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.cv{aspect-ratio:2/3;border:1px solid var(--line);cursor:pointer;font:500 12px/1.15 "Cormorant Garamond",serif;padding:6px;display:flex;align-items:flex-end;text-align:left}
+.cv[aria-checked=true]{outline:2px solid var(--ink);outline-offset:2px}
+.dvgroup label{display:block;font-size:13px;font-weight:500;margin:0 0 6px}
+.tog{display:flex;gap:12px;align-items:center;font-size:14px;cursor:pointer;margin:0 0 12px;min-height:44px}.tog input{width:22px;height:22px;accent-color:var(--ink)}
+.drop{border:1px dashed var(--ink2);padding:22px 14px;text-align:center;cursor:pointer;margin-bottom:12px}.drop.over{background:var(--bg2)}.drop small{color:var(--ink2)}
+.err{color:#a3452f;font-size:13px;margin-top:8px;min-height:1em}
+#vpv,#lv{width:100%;max-height:300px;background:#000;margin:12px 0}
+.qr{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}#qr{width:120px;height:120px;background:#fff;padding:8px;border:1px solid var(--line)}
+code{display:block;font-size:11.5px;word-break:break-all;background:var(--bg2);padding:6px 8px}
+.dvsum{background:var(--bg2);border:1px solid var(--line);padding:18px;margin-top:4px}
+.dvsum h4{font:500 19px "Cormorant Garamond",serif;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dvsum h4 em{font:400 11px Manrope;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.dvsum dl{font-size:13px;margin-bottom:14px}
+.dvsum dl div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.dvsum dt{color:var(--ink2)}.dvsum dd{text-align:right;margin:0}
+.dvsum .btn{width:100%;padding:13px}
+.dvsum .note{color:var(--ink2)}
+dialog{border:0;padding:20px;max-width:460px;width:calc(100% - 32px);background:var(--bg)}dialog::backdrop{background:rgba(0,0,0,.55)}.dbtn{display:flex;gap:8px;flex-wrap:wrap}
+
+@media(max-width:1000px){
+.trust .wrap span:nth-child(n+2){display:none}.trust .wrap{justify-content:center}
+.top{height:62px}.top .l a,.top .r a.hide{display:none}.logo{font-size:28px}
+.mb{display:block}
+nav.main{display:none!important}
+#drawer{display:flex;flex-direction:column;position:fixed;inset:0;z-index:60;background:#fff;padding:max(18px,env(safe-area-inset-top)) 22px max(10px,env(safe-area-inset-bottom));opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .28s,transform .28s,visibility .28s;overflow-y:auto}
+#drawer.open{opacity:1;visibility:visible;transform:none}
+.dtop{display:flex;align-items:center;gap:16px;margin-bottom:34px}
+#dx{background:none;border:0;padding:8px;cursor:pointer;color:var(--ink);flex:none}
+.dtop form{flex:1}.dtop input{width:100%;height:56px;border:0;border-radius:999px;background:#f6f6f6;padding:0 24px;font:500 17px Manrope,sans-serif;color:var(--ink)}
+.dtop input::placeholder{color:#b5b5b5}
+.dnav{display:flex;flex-direction:column;flex:1}
+.dnav a{display:flex;align-items:center;gap:16px;padding:19px 4px;font:500 21px Manrope,sans-serif;color:var(--ink)}
+.dnav a svg{flex:none}
+.dbot{border-top:1px solid #e8e8e8;margin-top:18px}
+.dbot>a,.dcur{display:flex;align-items:center;gap:14px;padding:20px 4px;font:400 16px Manrope,sans-serif;border-bottom:1px solid #e8e8e8}
+.dbot em,.dcur em{margin-left:auto;font-style:normal;color:#b5b5b5;font-weight:500}
+.dbot>a span,.dcur span{flex:none}
+.wrap{padding:0 20px}
+.pdp{grid-template-columns:1fr;gap:28px;padding:16px 0 48px}
+.gal{position:static}
+.thumbs{grid-template-columns:repeat(4,1fr);gap:8px}
+.pinfo h1{font-size:42px}
+.sizes{grid-template-columns:1fr}
+.size{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px}
+.size b{margin:0}
+.also{grid-template-columns:1fr;gap:32px}
+.edit{grid-template-columns:1fr}.edit .tx{padding:36px 20px}
+.fg{grid-template-columns:1fr 1fr}
+section{padding:48px 0}
+body.has-bar .wa{bottom:88px}
+.days .d{min-height:32px;font-size:12.5px}
+.slots{grid-template-columns:1fr}
+.sl{display:flex;justify-content:space-between;align-items:center;padding:12px}
+.sl em{margin:0}
+.covers{grid-template-columns:repeat(5,minmax(64px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.cv{scroll-snap-align:start}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="trust"><div class="wrap">
+<span>15% off your first order</span>
+<span>Based in Ajman, delivering across the UAE</span>
+<span>WhatsApp +971 50 888 6470</span>
+</div></div>
+
+<header>
+<div class="wrap top">
+<div class="l"><a href="https://www.instagram.com/kyrahfleurs">Instagram</a><a href="https://www.tiktok.com/@kyrahfleurs">TikTok</a></div>
+<a class="logo" href="https://kyrahfleurs.com/">Kyrah Fleurs</a>
+<div class="r">
+<a class="hide" href="https://kyrahfleurs.com/search">Search</a>
+<a class="hide" href="https://kyrahfleurs.com/customer_authentication/redirect?locale=en&region_country=AE">Login</a>
+<a href="#wish">Wishlist <span id="wc">0</span></a>
+<a href="https://kyrahfleurs.com/cart">Bag <span id="cc2">0</span></a>
+<button class="mb" id="mb" aria-label="Open menu" aria-expanded="false">
+<svg width="34" height="14" viewBox="0 0 34 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M2 2h30M2 12h20"/></svg>
+</button>
+</div>
+</div>
+<nav class="main"><ul>
+<li><a href="https://kyrahfleurs.com/collections/all">Shop All</a></li>
+<li><a href="#plan">Plan Delivery</a></li>
+<li><a href="https://kyrahfleurs.com/collections/flowers">Flowers</a></li>
+<li><a href="https://kyrahfleurs.com/collections/bundles">Bundles</a></li>
+<li><a href="https://kyrahfleurs.com/collections/chocolate">Chocolates</a></li>
+<li><a href="https://kyrahfleurs.com/collections/hampers">Hampers</a></li>
+<li><a href="https://kyrahfleurs.com/pages/corporate-gifting">Corporate</a></li>
+<li><a href="https://kyrahfleurs.com/pages/bespoke">Kyrah Concierge</a></li>
+</ul></nav>
+</header>
+
+<div id="drawer" aria-hidden="true">
+<div class="dtop">
+<button type="button" id="dx" aria-label="Close menu"><svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+<form action="https://kyrahfleurs.com/search" method="get" role="search"><input type="search" name="q" placeholder="Search" aria-label="Search products"></form>
+</div>
+<nav class="dnav" aria-label="Menu">
+<a href="https://kyrahfleurs.com/"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+<a href="https://kyrahfleurs.com/collections/all"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Shop</a>
+<a href="https://kyrahfleurs.com/collections/birthday-celebration"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/></svg>Special Occasions</a>
+<a href="#plan"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Plan Delivery</a>
+<a href="https://kyrahfleurs.com/pages/corporate-gifting"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3"/><path d="M3 13h18"/></svg>Corporate</a>
+<a href="https://kyrahfleurs.com/cart"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Bag</a>
+</nav>
+<div class="dbot">
+<a href="https://wa.me/message/SIJKBNHEFLDGF1"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.4z"/></svg><span>Chat on WhatsApp</span><em>+971 50 888 6470</em></a>
+<div class="dcur"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2 0 3 5 1.5 5 4 0 1.2-1 2-2.5 2-1.1 0-2.1-.5-2.6-1.5M12 6.5V8M12 16v1.5"/></svg><span>Currency</span><em>AED</em></div>
+</div>
+</div>
+
+<main>
+<div class="wrap">
+<nav class="crumb" aria-label="Breadcrumb">
+<a href="https://kyrahfleurs.com/">Home</a><span>/</span>
+<a href="https://kyrahfleurs.com/collections/flowers">Flowers</a><span>/</span>
+The Amélie Bouquet
+</nav>
+</div>
+
+<div class="wrap">
+<div class="pdp">
+
+  <!-- ============ GALLERY ============ -->
+  <div class="gal">
+    <div class="gal-main">
+      <span class="badge">Signature</span>
+      <img id="galMain"
+           src="amelie-new.png"
+           alt="The Amélie Bouquet by Kyrah Fleurs">
+    </div>
+    <div class="thumbs" role="group" aria-label="Product images">
+      <button class="thumb" aria-current="true" data-alt="The Amélie Bouquet by Kyrah Fleurs"
+        data-src="amelie-new.png">
+        <img src="amelie-new.png" alt="" loading="lazy">
+      </button>
+      <button class="thumb" aria-current="false" data-alt="The Amélie Bouquet, close-up"
+        data-src="amelie-new.png">
+        <img src="amelie-new.png" alt="" loading="lazy">
+      </button>
+      <button class="thumb" aria-current="false" data-alt="The Amélie Bouquet styling"
+        data-src="amelie-new.png">
+        <img src="amelie-new.png" alt="" loading="lazy">
+      </button>
+      <button class="thumb" aria-current="false" data-alt="The Amélie Bouquet detail"
+        data-src="amelie-new.png">
+        <img src="amelie-new.png" alt="" loading="lazy">
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ INFO ============ -->
+  <div class="pinfo">
+    <p class="kick">Signature Collection</p>
+    <h1>The Amélie Bouquet</h1>
+
+    <div class="rate"><span class="stars">★★★★★</span><b>4.9</b><span>· 88 reviews</span></div>
+
+    <p class="price" id="price">Dhs. 395.00 AED <small id="priceNote">Signature · hand-tied</small></p>
+    <p class="stock"><i></i> In stock — hand-tied fresh today</p>
+
+    <p class="lede">A hand-tied bouquet of garden roses, lisianthus and seasonal foliage, wrapped in our signature paper and finished by hand. Every stem is chosen the morning it travels to you.</p>
+
+    <!-- size -->
+    <div class="opt-group">
+      <p class="opt-label">Size <em id="sizeNote">Most loved</em></p>
+      <div class="sizes" role="group" aria-label="Choose a size">
+        <button class="size" data-size="petite" aria-pressed="false">
+          <span><strong>Petite</strong><small>15–20 stems</small></span><b>Dhs. 325</b>
+        </button>
+        <button class="size" data-size="signature" aria-pressed="true">
+          <span><strong>Signature</strong><small>25–30 stems</small></span><b>Dhs. 395</b>
+        </button>
+        <button class="size" data-size="grand" aria-pressed="false">
+          <span><strong>Grand</strong><small>40–45 stems</small></span><b>Dhs. 550</b>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         INLINE DELIVERY PLANNER
+         ============================================================ -->
+    <div class="dvgroup" id="plan">
+      <div class="dvh"><b>1</b> Delivery date &amp; time <span class="req">Required</span></div>
+      <div class="calh">
+        <button type="button" id="pm" aria-label="Previous month">‹</button>
+        <strong id="mt"></strong>
+        <button type="button" id="nm" aria-label="Next month">›</button>
+      </div>
+      <div class="dow"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+      <div class="days" id="days" role="grid"></div>
+      <div class="leg"><i class="a"></i>Available <i class="f"></i>Booked out <i class="r"></i>Unavailable</div>
+      <p class="note" id="dnote">Same-day orders close at 2:00 PM (UAE time).</p>
+      <div class="slots" id="slots" role="radiogroup" aria-label="Delivery window"></div>
+    </div>
+
+    <div class="dvgroup">
+      <div class="dvh"><b>2</b> Luxury card</div>
+      <p class="note" style="margin:0 0 12px">Complimentary with every bouquet.</p>
+      <div class="covers" id="covers" role="radiogroup" aria-label="Card design"></div>
+      <label for="msg">Your message</label>
+      <textarea id="msg" maxlength="300" rows="4" placeholder="Write something from the heart…"></textarea>
+      <div class="mrow">
+        <span id="cc">0 / 300</span>
+        <span class="seg">
+          <button type="button" class="on" data-f="script">Handwritten</button>
+          <button type="button" data-f="serif">Printed</button>
+        </span>
+      </div>
+      <label for="from">Signed by</label>
+      <input type="text" id="from" maxlength="40" placeholder="Your name">
+      <div class="card" id="card" style="max-width:190px;margin:14px 0 0">
+        <small id="ct">Happy Birthday</small>
+        <p id="cm" class="script">Your message will appear here.</p>
+        <em id="cf"></em>
+      </div>
+    </div>
+
+    <div class="dvgroup">
+      <div class="dvh"><b>3</b> Video QR message <span class="opt">optional</span></div>
+      <label class="tog"><input type="checkbox" id="vt"><span>Attach a personal video QR message <b id="vp"></b></span></label>
+      <div id="vbox" hidden>
+        <div class="drop" id="drop" tabindex="0">
+          <p><strong>Drop a video here</strong> or tap to choose</p>
+          <small>.mp4 or .mov, up to 60 seconds</small>
+          <input type="file" id="vf" accept="video/mp4,video/quicktime,.mp4,.mov" hidden>
+        </div>
+        <button type="button" class="btn alt" id="rec">Record a video now</button>
+        <p class="err" id="verr" role="alert"></p>
+        <div id="vres" hidden>
+          <video id="vpv" controls playsinline></video>
+          <div class="qr">
+            <div id="qr"></div>
+            <div>
+              <strong>Your unique QR code</strong>
+              <p class="note">This QR is printed inside the card. The recipient scans it to watch your video.</p>
+              <code id="qu"></code>
+              <p class="note" id="qn"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dvsum">
+      <h4>Your gift details <em>Live summary</em></h4>
+      <dl id="sl"></dl>
+      <button type="button" class="btn" id="save">Save delivery details</button>
+      <p class="note" id="sv"></p>
+    </div>
+
+    <!-- ============================================================
+         MAKE IT PERSONAL (add-ons)
+         ============================================================ -->
+    <div class="opt-group">
+      <p class="opt-label">Make it personal <em>Optional</em></p>
+
+      <label class="check" for="optChoc">
+        <input type="checkbox" id="optChoc">
+        <span class="tx"><strong>Belgian chocolate box</strong><small>Twelve hand-finished chocolates, boxed to match.</small></span>
+        <span class="amt">+ Dhs. 45</span>
+      </label>
+
+      <label class="check" for="optVase">
+        <input type="checkbox" id="optVase">
+        <span class="tx"><strong>Add a glass vase</strong><small>A simple clear vase so the bouquet can go straight into water.</small></span>
+        <span class="amt">+ Dhs. 30</span>
+      </label>
+    </div>
+
+    <!-- delivery hint -->
+    <div class="del-hint" id="delHint">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>Pick a delivery date &amp; time above to add to bag.</span>
+    </div>
+
+    <!-- buy -->
+    <div class="buy">
+      <div class="qty">
+        <button type="button" id="minus" aria-label="Decrease quantity">−</button>
+        <output id="qty" aria-live="polite">1</output>
+        <button type="button" id="plus" aria-label="Increase quantity">+</button>
+      </div>
+      <button class="btn" id="add">Add to bag — Dhs. 395.00 AED</button>
+      <button class="wish" id="wish" aria-pressed="false" aria-label="Save to wishlist">♡</button>
+    </div>
+    <p class="total"><span>Total</span><b id="total">Dhs. 395.00 AED</b></p>
+    <div class="bk" id="bk" aria-live="polite"></div>
+
+    <div class="ship">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="14" height="12"/><path d="M15 9h4l4 4v4h-8z"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="18.5" cy="18" r="1.8"/></svg>
+      <span id="shipNote">Order within 4h 12m for same-day delivery in Ajman &amp; Dubai.</span>
+    </div>
+
+    <div class="accs">
+      <details class="acc" open>
+        <summary>What's inside</summary>
+        <div class="accb">
+          <p>Garden roses, lisianthus, spray roses and seasonal foliage, hand-tied and wrapped in signature paper with a satin ribbon.</p>
+          <ul>
+            <li>Complimentary handwritten card</li>
+            <li>Care guide and flower food included</li>
+            <li>Approx. 50 cm tall as wrapped</li>
+          </ul>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Delivery</summary>
+        <div class="accb">
+          <p>Same-day delivery across Ajman and Dubai for orders placed before 2:00 PM. Next-day across the rest of the UAE. Evening windows are available at checkout.</p>
+          <p><a href="https://kyrahfleurs.com/policies/shipping-policy" style="border-bottom:1px solid var(--line)">Read the full delivery policy</a></p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Care</summary>
+        <div class="accb">
+          <p>Trim the stems and place in fresh water as soon as possible. Keep away from direct sun and ripening fruit. Change the water every second day. Blooms look their best for 5–7 days.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Need help choosing?</summary>
+        <div class="accb">
+          <p>Our team can build something bespoke for you. <a href="https://wa.me/message/SIJKBNHEFLDGF1" style="border-bottom:1px solid var(--line)">Chat on WhatsApp</a> and we'll send photos before dispatch.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<dialog id="dlg">
+  <video id="lv" autoplay muted playsinline></video>
+  <p class="note" id="rt">Up to 60 seconds</p>
+  <div class="dbtn">
+    <button type="button" class="btn" id="rs">Start recording</button>
+    <button type="button" class="btn alt" id="ru" hidden>Use this video</button>
+    <button type="button" class="btn alt" id="rc">Close</button>
+  </div>
+</dialog>
+
+<!-- ============ ALSO LIKE ============ -->
+<section id="also">
+  <div class="wrap">
+    <div class="sh rv"><h2>You may also like</h2><p>Handcrafted in Ajman, delivered across the UAE.</p></div>
+    <div class="also rv">
+      <article class="p">
+        <div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-alba-hatbox.png?width=600" alt="The Alba Hatbox"></div>
+        <h3><a href="https://kyrahfleurs.com/products/the-alba-hatbox">The Alba Hatbox</a></h3>
+        <p class="price">Dhs. 300.00 AED</p>
+      </article>
+      <article class="p">
+        <div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/the-secret-garden-assortment-hero.jpg?width=600" alt="The Secret Garden Assortment"></div>
+        <h3><a href="https://kyrahfleurs.com/products/the-secret-garden-assortment">The Secret Garden Assortment</a></h3>
+        <p class="price">Dhs. 300.00 AED</p>
+      </article>
+      <article class="p">
+        <div class="ph"><img loading="lazy" src="https://kyrahfleurs.com/cdn/shop/files/oval-pistachio-box.png?width=600" alt="Oval Pistachio Box"></div>
+        <h3><a href="https://kyrahfleurs.com/products/oval-pistachio-box">Oval Pistachio Box</a></h3>
+        <p class="price">Dhs. 400.00 AED</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDITORIAL ============ -->
+<div class="edit">
+  <div class="im"><img loading="lazy" src="amelie-new.png" alt="The Amélie Bouquet styled at home"></div>
+  <div class="tx rv">
+    <h2>Made by hand, finished with your words.</h2>
+    <p>Every bouquet is tied the morning it travels. Your card is written by hand, your message kept exactly as you wrote it.</p>
+    <a class="btn" href="https://kyrahfleurs.com/collections/all">Shop all flowers</a>
+  </div>
+</div>
+
+<div class="help" style="background:var(--blush);text-align:center;padding:72px 24px">
+  <h2 style="font-size:clamp(28px,3.4vw,44px);margin-bottom:10px">Need a little help? We're here for you.</h2>
+  <p style="color:var(--ink2)">Chat now or speak with our team on <a style="border-bottom:1px solid var(--ink2)" href="https://wa.me/message/SIJKBNHEFLDGF1">+971 50 888 6470</a></p>
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="fg">
+<div>
+<div class="logo" style="font-size:30px">Kyrah Fleurs</div>
+<p style="margin-top:6px;max-width:30ch">Flowers, gifts and personal touches. Based in Ajman, delivering across the UAE.</p>
+</div>
+<div><h4>Occasion</h4><a href="https://kyrahfleurs.com/collections/birthday-celebration">Birthday</a><a href="https://kyrahfleurs.com/collections/love-romance">Love</a><a href="https://kyrahfleurs.com/collections/new-baby-newborn">Newborn</a><a href="https://kyrahfleurs.com/collections/graduation">Graduation</a></div>
+<div><h4>Collection</h4><a href="https://kyrahfleurs.com/collections/flowers">Flowers</a><a href="https://kyrahfleurs.com/collections/bundles">Bundles</a><a href="https://kyrahfleurs.com/collections/chocolate">Chocolates</a><a href="https://kyrahfleurs.com/collections/hampers">Hampers</a></div>
+<div><h4>Services</h4><a href="https://kyrahfleurs.com/pages/corporate-gifting">Corporate Gifting</a><a href="https://kyrahfleurs.com/collections/wedding-gifting">Wedding Gifting</a><a href="https://kyrahfleurs.com/pages/bespoke">Kyrah Concierge</a></div>
+<div><h4>Info</h4><a href="https://kyrahfleurs.com/policies/shipping-policy">Shipping</a><a href="https://kyrahfleurs.com/policies/refund-policy">Refunds</a><a href="https://kyrahfleurs.com/policies/privacy-policy">Privacy</a><a href="https://kyrahfleurs.com/policies/terms-of-service">Terms</a></div>
+</div>
+<div class="fb">
+<span>© 2026 Kyrah Fleurs</span>
+<span><a style="display:inline" href="https://www.instagram.com/kyrahfleurs">Instagram</a> · <a style="display:inline" href="https://www.tiktok.com/@kyrahfleurs">TikTok</a> · <a style="display:inline" href="https://pin.it/4FVtb2PVo">Pinterest</a> · <a style="display:inline" href="https://snapchat.com/t/5EX0N0Td">Snapchat</a></span>
+</div>
+</div>
+</footer>
+
+<a class="wa" href="https://wa.me/message/SIJKBNHEFLDGF1" aria-label="Chat with Kyrah Fleurs on WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<div class="stickybar" id="bar" aria-hidden="true">
+  <div class="mini"><img src="amelie-new.png" alt=""></div>
+  <div class="tx"><strong>The Amélie Bouquet</strong><span id="barPrice">Dhs. 395.00 AED</span></div>
+  <button class="btn" id="barAdd">Add to bag</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   PRODUCT PAGE SCRIPT
+   ============================================================ */
+(() => {
+  'use strict';
+  const $  = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+
+  /* mobile drawer */
+  const drawer = $('#drawer'), mb = $('#mb');
+  const setDrawer = open => {
+    drawer.classList.toggle('open', open);
+    drawer.setAttribute('aria-hidden', !open);
+    mb.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('lock', open);
+    if (open) drawer.querySelector('#dx').focus(); else mb.focus();
+  };
+  mb.addEventListener('click', () => setDrawer(true));
+  $('#dx').addEventListener('click', () => setDrawer(false));
+  $$('#drawer .dnav a, #drawer .dbot a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
+  matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) setDrawer(false); });
+
+  /* gallery */
+  const mainImg = $('#galMain');
+  $$('.thumb').forEach(t => t.addEventListener('click', () => {
+    if (t.getAttribute('aria-current') === 'true') return;
+    $$('.thumb').forEach(x => x.setAttribute('aria-current', x === t));
+    mainImg.src = t.dataset.src;
+    mainImg.alt = t.dataset.alt || '';
+    mainImg.animate([{ opacity: .35 }, { opacity: 1 }], { duration: 420, easing: 'ease' });
+  }));
+
+  /* pricing state */
+  const PRICES = { petite: 325, signature: 395, grand: 550 };
+  const NOTES  = { petite: 'Petite · 15–20 stems', signature: 'Signature · hand-tied', grand: 'Grand · 40–45 stems' };
+  const LABELS = { petite: 'Petite', signature: 'Signature', grand: 'Grand' };
+  const CHOC = 45, VASE = 30, VIDEO = 15;
+  const S = { size: 'signature', qty: 1, choc: false, vase: false };
+
+  const money = n => 'Dhs. ' + n.toFixed(2) + ' AED';
+  const videoOn = () => { const v = document.getElementById('vt'); return !!(v && v.checked); };
+  const deliveryReady = () => { const d = window.kfDelivery; return !!(d && d.date && d.slot); };
+  const unit  = () => PRICES[S.size] + (S.choc ? CHOC : 0) + (S.vase ? VASE : 0) + (videoOn() ? VIDEO : 0);
+  const total = () => unit() * S.qty;
+
+  function render() {
+    const t = total();
+    const ready = deliveryReady();
+
+    $('#price').innerHTML = money(PRICES[S.size]) + ' <small id="priceNote">' + NOTES[S.size] + '</small>';
+    $('#total').textContent = money(t);
+    $('#barPrice').textContent = money(t);
+    $('#qty').textContent = S.qty;
+    $$('.size').forEach(b => b.setAttribute('aria-pressed', b.dataset.size === S.size));
+    $('#sizeNote').textContent = S.size === 'signature' ? 'Most loved' : '';
+    $('#optChoc').checked = S.choc;
+    $('#optVase').checked = S.vase;
+
+    /* cost breakdown */
+    const lines = [['Flowers · ' + LABELS[S.size], money(PRICES[S.size])]];
+    if (S.choc) lines.push(['Belgian chocolate box', '+ ' + money(CHOC)]);
+    if (S.vase) lines.push(['Glass vase', '+ ' + money(VASE)]);
+    if (videoOn()) lines.push(['Video QR message', '+ ' + money(VIDEO)]);
+    if (S.qty > 1) lines.push(['Quantity', '× ' + S.qty]);
+    $('#bk').innerHTML = lines.map(r => '<div><span>' + r[0] + '</span><span>' + r[1] + '</span></div>').join('');
+
+    /* buy buttons reflect delivery gate */
+    if (ready) {
+      $('#add').textContent = 'Add to bag — ' + money(t);
+      $('#barAdd').textContent = 'Add to bag';
+      $('#delHint').classList.remove('show');
+    } else {
+      $('#add').textContent = 'Plan delivery to add — ' + money(t);
+      $('#barAdd').textContent = 'Plan delivery';
+      $('#delHint').classList.add('show');
+    }
+  }
+  window.kfRender = render;
+
+  $$('.size').forEach(b => b.addEventListener('click', () => { S.size = b.dataset.size; render(); }));
+
+  $('#minus').addEventListener('click', () => { S.qty = Math.max(1, S.qty - 1); render(); });
+  $('#plus').addEventListener('click',  () => { S.qty = Math.min(20, S.qty + 1); render(); });
+
+  $('#optChoc').addEventListener('change', e => { S.choc = e.target.checked; render(); });
+  $('#optVase').addEventListener('change', e => { S.vase = e.target.checked; render(); });
+
+  /* wishlist */
+  const ID = 'the-amelie-bouquet';
+  let wl = [];
+  try { wl = JSON.parse(localStorage.getItem('kf-wl') || '[]'); } catch (e) {}
+  const wishBtn = $('#wish');
+  function syncWish() {
+    const on = wl.includes(ID);
+    wishBtn.setAttribute('aria-pressed', on);
+    wishBtn.textContent = on ? '♥' : '♡';
+    $('#wc').textContent = wl.length;
+  }
+  wishBtn.addEventListener('click', () => {
+    wl = wl.includes(ID) ? wl.filter(x => x !== ID) : [...wl, ID];
+    try { localStorage.setItem('kf-wl', JSON.stringify(wl)); } catch (e) {}
+    syncWish();
+    toast(wl.includes(ID) ? 'Saved to your wishlist' : 'Removed from your wishlist');
+  });
+  syncWish();
+
+  /* add to bag */
+  let bag = 0;
+  try { bag = +(localStorage.getItem('kf-bag') || 0); } catch (e) {}
+  $('#cc2').textContent = bag;
+
+  function addToBag() {
+    const d = window.kfDelivery;
+    if (!d || !d.date || !d.slot) {
+      document.getElementById('plan').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      toast('Pick a delivery date & time first');
+      return;
+    }
+    bag += S.qty;
+    try { localStorage.setItem('kf-bag', bag); } catch (e) {}
+    $('#cc2').textContent = bag;
+
+    const line = {
+      product: 'The Amélie Bouquet',
+      size: S.size,
+      quantity: S.qty,
+      chocolate: S.choc,
+      vase: S.vase,
+      total: total(),
+      delivery: {
+        date: d.date.toISOString().slice(0, 10),
+        slot: d.slot,
+        card: d.card,
+        message: d.message,
+        signed: d.from,
+        videoQR: d.videoOn,
+        videoToken: d.token
+      }
+    };
+    try { sessionStorage.setItem('kf-line', JSON.stringify(line)); } catch (e) {}
+    toast('Added to your bag — ' + money(total()));
+  }
+  $('#add').addEventListener('click', addToBag);
+  $('#barAdd').addEventListener('click', addToBag);
+
+  /* toast */
+  let tId;
+  function toast(text) {
+    const t = $('#toast');
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(tId);
+    tId = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  /* delivery countdown */
+  function dubaiNow() {
+    return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Dubai' }));
+  }
+  function shipNote() {
+    const n = dubaiNow();
+    const cut = new Date(n); cut.setHours(14, 0, 0, 0);
+    const el = $('#shipNote');
+    if (n < cut) {
+      const ms = cut - n;
+      const h = Math.floor(ms / 3.6e6), m = Math.floor(ms % 3.6e6 / 6e4);
+      el.textContent = 'Order within ' + h + 'h ' + m + 'm for same-day delivery in Ajman & Dubai.';
+    } else {
+      el.textContent = 'Same-day delivery has closed for today. Order now for delivery tomorrow morning.';
+    }
+  }
+  shipNote();
+  setInterval(shipNote, 60000);
+
+  /* sticky bar */
+  const bar = $('#bar'), addBtn = $('#add');
+  const barIO = new IntersectionObserver(([e]) => {
+    const show = !e.isIntersecting && e.boundingClientRect.top < 0;
+    bar.classList.toggle('show', show);
+    bar.setAttribute('aria-hidden', !show);
+    document.body.classList.toggle('has-bar', show);
+  }, { threshold: 0 });
+  barIO.observe(addBtn);
+
+  /* reveal */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .1 });
+  $$('.rv').forEach(el => io.observe(el));
+
+  /* broken image fallback */
+  $$('img').forEach(i => {
+    const hide = () => { i.style.display = 'none'; };
+    i.addEventListener('error', hide);
+    if (i.complete && !i.naturalWidth) hide();
+  });
+
+  render();
+})();
+</script>
+
+<!-- QR code library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+/* ============================================================
+   INLINE DELIVERY PLANNER SCRIPT
+   ============================================================ */
+(() => {
+  const CFG = {
+    tz: 'Asia/Dubai', cutoff: 14, lead: 3, horizon: 90, videoPrice: 15, cur: 'Dhs.',
+    blackoutOffsets: [6, 7], fullOffsets: [3, 11], eveningFullOffsets: [2, 5], fewOffsets: [1, 4, 9],
+    slots: [
+      { id: 'am', n: 'Morning',   t: '9:00 AM – 12:00 PM', s: 9 },
+      { id: 'pm', n: 'Afternoon', t: '12:00 – 4:00 PM',    s: 12 },
+      { id: 'ev', n: 'Evening',   t: '4:00 – 8:00 PM',     s: 16 }
+    ]
+  };
+
+  const $ = id => document.getElementById(id);
+  const nowD = () => new Date(new Date().toLocaleString('en-US', { timeZone: CFG.tz }));
+  const key = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const base = nowD(); base.setHours(0, 0, 0, 0);
+  const off = d => Math.round((d - base) / 864e5);
+  const money = n => CFG.cur + ' ' + n.toFixed(2);
+  const S = { date: null, slot: null, card: 'Happy Birthday', font: 'script', video: null, vurl: null, token: null };
+
+  window.kfDelivery = {
+    get date()    { return S.date; },
+    get slot()    { return S.slot; },
+    get card()    { return S.card; },
+    get font()    { return S.font; },
+    get video()   { return S.video; },
+    get token()   { return S.token; },
+    get videoOn() { return $('vt').checked; },
+    get message() { return $('msg').value; },
+    get from()    { return $('from').value; }
+  };
+
+  let view = new Date(base.getFullYear(), base.getMonth(), 1);
+
+  function dayState(d) {
+    const o = off(d), n = nowD();
+    if (o < 0 || o > CFG.horizon) return 'off';
+    if (CFG.blackoutOffsets.includes(o)) return 'res';
+    if (CFG.fullOffsets.includes(o)) return 'full';
+    if (o === 0 && (n.getHours() >= CFG.cutoff || !CFG.slots.some(s => s.s >= n.getHours() + CFG.lead))) return 'off';
+    return 'av';
+  }
+
+  function slotState(d, s) {
+    const o = off(d), n = nowD();
+    if (o === 0 && s.s < n.getHours() + CFG.lead) return 'lock';
+    if (s.id === 'ev' && CFG.eveningFullOffsets.includes(o)) return 'full';
+    return CFG.fewOffsets.includes(o) ? 'few' : 'ok';
+  }
+
+  function cal() {
+    const g = $('days'); g.innerHTML = '';
+    $('mt').textContent = view.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    const lead = (view.getDay() + 6) % 7, n = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+    for (let i = 0; i < lead; i++) g.append(document.createElement('span'));
+    for (let i = 1; i <= n; i++) {
+      const d = new Date(view.getFullYear(), view.getMonth(), i), st = dayState(d), b = document.createElement('button');
+      b.type = 'button'; b.textContent = i; b.className = 'd ' + st + (S.date && key(S.date) === key(d) ? ' sel' : '');
+      const lbl = d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+      b.setAttribute('aria-label', lbl + (st === 'av' ? '' : st === 'full' ? ', booked out' : ', unavailable'));
+      if (st !== 'av') b.setAttribute('aria-disabled', 'true');
+      else b.onclick = () => { S.date = d; S.slot = null; cal(); slots(); sum(); };
+      g.append(b);
+    }
+    $('pm').disabled = view <= new Date(base.getFullYear(), base.getMonth(), 1);
+    const n2 = nowD();
+    $('dnote').textContent = n2.getHours() >= CFG.cutoff
+      ? 'Same-day delivery has closed for today (cut-off 2:00 PM UAE time). Pick tomorrow or later.'
+      : 'Same-day orders close at 2:00 PM (UAE time).';
+  }
+
+  function slots() {
+    const w = $('slots'); w.innerHTML = '';
+    if (!S.date) { w.innerHTML = '<p class="note">Choose a date to see delivery windows.</p>'; w.style.display = 'block'; return; }
+    w.style.display = '';
+    CFG.slots.forEach(s => {
+      const st = slotState(S.date, s), b = document.createElement('button');
+      b.type = 'button'; b.className = 'sl ' + st; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', S.slot === s.id);
+      const tag = { ok: 'Available', few: 'Few left', full: 'Fully booked', lock: 'Too late today' }[st];
+      b.innerHTML = '<span><strong>' + s.n + '</strong><small>' + s.t + '</small></span><em>' + tag + '</em>';
+      if (st === 'full' || st === 'lock') b.setAttribute('aria-disabled', 'true');
+      else b.onclick = () => { S.slot = s.id; slots(); sum(); };
+      w.append(b);
+    });
+  }
+
+  $('pm').onclick = () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); cal(); };
+  $('nm').onclick = () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); cal(); };
+
+  /* cards */
+  const COV = [
+    ['Happy Birthday', '#F6E3D3'], ['With Love', '#E8C9CC'], ['Congratulations', '#E9E2CF'],
+    ['With Sympathy', '#DDE3DA'], ['Blank Luxe Card', '#FFFDF9']
+  ];
+  const cv = $('covers');
+  COV.forEach(([t, c], i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'cv'; b.style.background = c; b.textContent = t;
+    b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', i === 0);
+    b.onclick = () => { S.card = t; [...cv.children].forEach(x => x.setAttribute('aria-checked', x === b)); prev(); sum(); };
+    cv.append(b);
+  });
+
+  function prev() {
+    const m = $('msg').value, l = m.length;
+    $('cc').textContent = l + ' / 300'; $('cc').parentElement.classList.toggle('warn', l >= 280);
+    $('ct').textContent = S.card === 'Blank Luxe Card' ? '' : S.card;
+    $('cm').textContent = m || 'Your message will appear here.';
+    $('cm').className = S.font;
+    $('cf').textContent = $('from').value ? '— ' + $('from').value : '';
+  }
+  $('msg').oninput = () => { prev(); sum(); };
+  $('from').oninput = () => { prev(); };
+  document.querySelectorAll('.seg button').forEach(b => b.onclick = () => {
+    S.font = b.dataset.f;
+    document.querySelectorAll('.seg button').forEach(x => x.classList.toggle('on', x === b));
+    prev();
+  });
+
+  /* video */
+  $('vp').textContent = '(+ ' + money(CFG.videoPrice) + ')';
+  $('vt').onchange = e => { $('vbox').hidden = !e.target.checked; if (!e.target.checked) clearV(); sum(); };
+  $('drop').onclick = () => $('vf').click();
+  $('drop').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); $('vf').click(); } };
+  ['dragover', 'dragenter'].forEach(ev => $('drop').addEventListener(ev, e => { e.preventDefault(); $('drop').classList.add('over'); }));
+  ['dragleave', 'drop'].forEach(ev => $('drop').addEventListener(ev, e => { e.preventDefault(); $('drop').classList.remove('over'); }));
+  $('drop').addEventListener('drop', e => take(e.dataTransfer.files[0]));
+  $('vf').onchange = e => take(e.target.files[0]);
+
+  function clearV() {
+    if (S.vurl) URL.revokeObjectURL(S.vurl);
+    S.video = S.vurl = S.token = null;
+    $('vres').hidden = true; $('verr').textContent = '';
+  }
+
+  function take(f) {
+    $('verr').textContent = '';
+    if (!f) return;
+    const ok = /\.(mp4|mov)$/i.test(f.name) || ['video/mp4', 'video/quicktime'].includes(f.type);
+    if (!ok) return $('verr').textContent = 'Please choose an .mp4 or .mov file.';
+    const u = URL.createObjectURL(f), v = document.createElement('video');
+    v.preload = 'metadata';
+    v.onloadedmetadata = () => {
+      if (v.duration > 60.5) {
+        URL.revokeObjectURL(u);
+        $('verr').textContent = 'That video is ' + Math.round(v.duration) + ' seconds. The limit is 60.';
+        return;
+      }
+      use(f, u);
+    };
+    v.onerror = () => { URL.revokeObjectURL(u); $('verr').textContent = 'We could not read that video. Try an .mp4.'; };
+    v.src = u;
+  }
+
+  function use(f, u) {
+    clearV();
+    S.video = f; S.vurl = u;
+    S.token = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2)).replace(/-/g, '').slice(0, 16);
+    $('vpv').src = u; $('vres').hidden = false;
+    const link = 'https://kyrahfleurs.com/v/' + S.token;
+    $('qu').textContent = link; $('qr').innerHTML = '';
+    if (window.QRCode) new QRCode($('qr'), { text: link, width: 104, height: 104, correctLevel: QRCode.CorrectLevel.M });
+    else $('qr').textContent = 'QR library unavailable offline';
+    $('qn').textContent = 'Preview link. The hosted viewing page goes live once video upload hosting is connected, so do not print this code yet.';
+    sum();
+  }
+
+  /* recorder */
+  let ms, mr, ch = [], tm, t0;
+  const dlg = $('dlg');
+
+  $('rec').onclick = async () => {
+    $('verr').textContent = '';
+    if (!navigator.mediaDevices || !window.MediaRecorder) {
+      const i = document.createElement('input');
+      i.type = 'file'; i.accept = 'video/*'; i.setAttribute('capture', 'user');
+      i.onchange = () => take(i.files[0]);
+      return i.click();
+    }
+    try { ms = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: true }); }
+    catch (e) { return $('verr').textContent = 'Camera access was blocked. You can upload a video instead.'; }
+    $('lv').srcObject = ms; $('lv').muted = true; $('lv').controls = false;
+    $('rs').hidden = false; $('rs').textContent = 'Start recording';
+    $('ru').hidden = true; $('rt').textContent = 'Up to 60 seconds';
+    dlg.showModal();
+  };
+
+  function stopCam() { clearInterval(tm); if (ms) ms.getTracks().forEach(t => t.stop()); }
+
+  $('rs').onclick = async () => {
+    if (mr && mr.state === 'recording') { mr.stop(); return; }
+    if (!ms || !ms.active) {
+      try { ms = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: true }); }
+      catch (e) { return; }
+      const l = $('lv'); l.controls = false; l.removeAttribute('src'); l.srcObject = ms; l.muted = true; $('ru').hidden = true;
+    }
+    ch = []; mr = new MediaRecorder(ms);
+    mr.ondataavailable = e => e.data.size && ch.push(e.data);
+    mr.onstop = () => {
+      clearInterval(tm);
+      const b = new Blob(ch, { type: mr.mimeType || 'video/webm' });
+      const l = $('lv');
+      l.srcObject = null; l.src = URL.createObjectURL(b); l.muted = false; l.controls = true; l.play().catch(() => {});
+      $('ru').hidden = false; $('rs').textContent = 'Record again'; $('rt').textContent = 'Preview your video';
+      stopCam(); dlg._b = b;
+    };
+    mr.start(); t0 = Date.now(); $('rs').textContent = 'Stop recording';
+    tm = setInterval(() => {
+      const s = Math.floor((Date.now() - t0) / 1000);
+      $('rt').textContent = 'Recording ' + s + 's / 60s';
+      if (s >= 60) mr.stop();
+    }, 250);
+  };
+
+  $('ru').onclick = () => {
+    const b = dlg._b; dlg.close();
+    const f = new File([b], 'recording.' + (b.type.includes('mp4') ? 'mp4' : 'webm'), { type: b.type });
+    use(f, URL.createObjectURL(b));
+  };
+  $('rc').onclick = () => { if (mr && mr.state === 'recording') mr.onstop = null; stopCam(); dlg.close(); };
+  dlg.addEventListener('close', stopCam);
+
+  /* summary */
+  function sum() {
+    const sl = CFG.slots.find(s => s.id === S.slot), m = $('msg').value.trim();
+    const rows = [
+      ['Date', S.date ? S.date.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }) : 'Not chosen'],
+      ['Window', sl ? sl.n + ', ' + sl.t : 'Not chosen'],
+      ['Card', S.card],
+      ['Message', m ? m.length + ' characters' : 'None']
+    ];
+    if ($('vt').checked) rows.push(['Video QR', (S.video ? 'Attached' : 'Waiting for video') + ', ' + money(CFG.videoPrice)]);
+    $('sl').innerHTML = rows.map(r => '<div><dt>' + r[0] + '</dt><dd>' + r[1].replace(/</g, '&lt;') + '</dd></div>').join('');
+    $('save').disabled = !(S.date && S.slot);
+    if (window.kfRender) window.kfRender();
+  }
+
+  $('save').onclick = () => {
+    const p = {
+      'Delivery date': key(S.date),
+      'Delivery window': S.slot,
+      'Card': S.card,
+      'Message': $('msg').value,
+      'Signed by': $('from').value,
+      'Video QR token': $('vt').checked ? S.token : ''
+    };
+    try { sessionStorage.setItem('kf-delivery', JSON.stringify(p)); } catch (e) {}
+    $('sv').textContent = 'Delivery details saved. Scroll down to add to bag.';
+  };
+
+  cal(); slots(); prev(); sum();
+})();
+</script>
+</body>
+</html>
